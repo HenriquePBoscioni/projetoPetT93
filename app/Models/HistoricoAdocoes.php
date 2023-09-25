@@ -9,5 +9,5 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Historico_adocoes extends Model
 {
     use HasFactory, SoftDeletes;
-    //
+    // gustavo s
 }
