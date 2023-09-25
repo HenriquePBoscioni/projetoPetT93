@@ -9,4 +9,5 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Historico_clientes extends Model
 {
     use HasFactory, SoftDeletes;
+    //
 }
