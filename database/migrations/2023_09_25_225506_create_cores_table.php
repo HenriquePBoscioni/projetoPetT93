@@ -12,9 +12,30 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cores', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_cor');
+            $table->string('cor', 100);
             $table->timestamps();
+            $table->softDeletes();
         });
+        App\Models\Cores::create([
+            'id_cor' => 1,
+            'cor' => Preto
+        ]);
+        App\Models\Cores::create([
+            'id_cor' => 2,
+            'cor' => Branco
+        ]);
+        App\Models\Cores::create([
+            'id_cor' => 3,
+            'cor' => Marrom
+        ]);
+        App\Models\Cores::create([
+            'id_cor' => 4,
+            'cor' => Cinza
+        ]);
+
+
+
     }
 
     /**
