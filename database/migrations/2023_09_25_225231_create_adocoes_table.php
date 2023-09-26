@@ -12,7 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('adocoes', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_adocao');
+            $table->int('id_cliente');
+            $table->int('id_pet');
+            $table->int('id_status');
+            $table->date('dt_inicio');
+            $table->date('dt_inicio_pa');
+            $table->date('dt_devolucao');
+            $table->string('descricao', 200);
+            $table->string('observacao', 200);
             $table->timestamps();
         });
     }
