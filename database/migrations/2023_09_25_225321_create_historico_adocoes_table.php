@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('historicoAdocoes', function (Blueprint $table) {
-            $table->increments('id_');
+            $table->increments('id_HistoricoAdocao');
+            $table->dateTime('dt');
+            $table->text('historico');
             $table->timestamps();
         });
     }
