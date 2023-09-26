@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('cores', function (Blueprint $table) {
             $table->increments('id_cor');
-            $table->string('cor', 100);
+            $table->int('id_pet');
+            $table->string('cor', 45);
             $table->timestamps();
             $table->softDeletes();
         });
