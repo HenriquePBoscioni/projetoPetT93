@@ -22,6 +22,29 @@ return new class extends Migration
             'id_Raca' => 1,
             'Raca' => PastorAlemao
         ]);
+        \app\molds\Racas::create([
+            'id_Raca' => 2,
+            'Raca' => Rottweiler
+        ]);
+        \app\molds\Racas::create([
+            'id_Raca' => 3,
+            'Raca' => Golden
+        ]);
+        \app\molds\Racas::create([
+            'id_Raca' => 4,
+            'Raca' => PitBull
+        ]);
+
+        \app\molds\Racas::create([
+            'id_Raca' => 5,
+            'Raca' => GatoPersa
+        ]);
+
+
+
+
+
+
     }
 
     /**
