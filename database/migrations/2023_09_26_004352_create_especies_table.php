@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('especies', function (Blueprint $table) {
             $table->increments('id_especies');
+            $table->integer('id_raca');
             $table->string('especie',45);
             $table->timestamps();
         });

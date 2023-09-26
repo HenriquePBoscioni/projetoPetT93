@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('contatos', function (Blueprint $table) {
             $table->increments('id_contato');
+            $table->integer('id_cliente');
             $table->string('email',45);
             $table->string('telefone',45);
             $table->timestamps();
