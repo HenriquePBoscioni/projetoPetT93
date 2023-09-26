@@ -12,9 +12,37 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('especies', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_especies');
+            $table->string('especie',45);
             $table->timestamps();
         });
+
+        \App\Models\Especies::create([
+            'id_especie' => 1,
+            'especie' => 'cachorro'
+
+        ]);
+        \App\Models\Especies::create([
+            'id_especie' => 2,
+            'especie' => 'gato'
+
+        ]);
+        \App\Models\Especies::create([
+            'id_especie' => 3,
+            'especie' => 'ave'
+
+        ]);
+        \App\Models\Especies::create([
+            'id_especie' => 4,
+            'especie' => 'reptil'
+
+        ]);
+        \App\Models\Especies::create([
+            'id_especie' => 5,
+            'especie' => 'roedores'
+
+        ]);
+
     }
 
     /**
