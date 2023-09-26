@@ -19,19 +19,19 @@ return new class extends Migration
         });
         App\Models\Cores::create([
             'id_cor' => 1,
-            'cor' => Preto
+            'cor' => 'Preto'
         ]);
         App\Models\Cores::create([
             'id_cor' => 2,
-            'cor' => Branco
+            'cor' => 'Branco'
         ]);
         App\Models\Cores::create([
             'id_cor' => 3,
-            'cor' => Marrom
+            'cor' => 'Marrom'
         ]);
         App\Models\Cores::create([
             'id_cor' => 4,
-            'cor' => Cinza
+            'cor' => 'Cinza'
         ]);
 
 
