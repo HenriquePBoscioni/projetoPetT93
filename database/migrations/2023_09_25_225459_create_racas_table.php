@@ -11,10 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('racas', function (Blueprint $table) {
-            $table->id();
+        Schema::create('Racas', function (Blueprint $table) {
+            $table->increments('id_raca');
+            $table->string('raca', 45);
             $table->timestamps();
+            $table->softDeletes();
         });
+
+        \app\molds\Racas::create([
+            'id_Raca' => 1,
+            'Raca' => PastorAlemao
+        ]);
     }
 
     /**
