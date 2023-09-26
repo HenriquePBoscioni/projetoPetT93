@@ -25,4 +25,8 @@ class Portes extends Model
         'id_pet',
         'tamanho'
     ];
+
+    public function Pets():BelongsTo{
+        return $this->belongsTo(Pets::class, 'id_pet', 'id_pet');
+    }
 }
