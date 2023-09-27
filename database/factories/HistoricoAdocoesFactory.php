@@ -17,7 +17,11 @@ class HistoricoAdocoesFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'id_historico_adocacao'=>fake()->numberBetween(1,50),
+            'id_adocao' => fake()->numberBetween(1,50),
+            'dt'=>fake()->dateTimeBetween(now(),'+30 week'),
+            'Historico' => fake()->text(),
+
         ];
     }
 }
