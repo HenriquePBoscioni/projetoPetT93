@@ -17,7 +17,10 @@ class HistoricoClientesFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'id_historico' => fake()->numberBetween(1,10),
+            'id_cliente' => fake()->numberBetween(1,10),
+            'dt_adocao' => fake()->dateTimeBetween('-1 year',now()),
+            'historico' => fake()->text()
         ];
     }
 }
