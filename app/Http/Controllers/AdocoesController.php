@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Adocoes;
 use Illuminate\Http\Request;
+use App\Models\{
+    HistoricoAdocoes,
+    Status,
+    Clientes,
+    Pet
+};
 
 class AdocoesController extends Controller
 {
