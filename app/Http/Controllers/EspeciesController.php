@@ -2,16 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Adocoes;
+use App\Models\Especies;
 use Illuminate\Http\Request;
-use App\Models\{
-    HistoricoAdocoes,
-    Status,
-    Clientes,
-    Pet
-};
 
-class AdocoesController extends Controller
+class EspeciesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -40,7 +34,7 @@ class AdocoesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Adocoes $adocoes)
+    public function show(Especies $especies)
     {
         //
     }
@@ -48,7 +42,7 @@ class AdocoesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Adocoes $adocoes)
+    public function edit(Especies $especies)
     {
         //
     }
@@ -56,7 +50,7 @@ class AdocoesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Adocoes $adocoes)
+    public function update(Request $request, Especies $especies)
     {
         //
     }
@@ -64,7 +58,7 @@ class AdocoesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Adocoes $adocoes)
+    public function destroy(Especies $especies)
     {
         //
     }
