@@ -11,15 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('historicoPets', function (Blueprint $table) {
-            $table->increments('id_historicoPet');
-            $table->integer('id_pet');
-            $table->text('historicoPet');
-            $table->text('personalidade');
-            $table->dateTime('dtDevolucao');
+        Schema::create('especies', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
         });
-
     }
 
     /**
@@ -27,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('historicoPets');
+        Schema::dropIfExists('especies');
     }
 };
