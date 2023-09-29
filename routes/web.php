@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+
     return redirect()->route('adocoes.index');
 })->middleware(['auth','verified'])->name('home');
 
