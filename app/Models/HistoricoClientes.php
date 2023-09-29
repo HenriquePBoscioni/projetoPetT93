@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Historico_clientes extends Model
+class HistoricoClientes extends Model
 {
     use HasFactory, SoftDeletes;
 
