@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Adocoes;
 use Illuminate\Http\Request;
+use App\Models\{
+    HistoricoAdocoes,
+    Status,
+    Clientes,
+    Pet
+};
 
 class AdocoesController extends Controller
 {
@@ -12,7 +18,12 @@ class AdocoesController extends Controller
      */
     public function index()
     {
-        //
+        $adocoes = Adocoes::orderBy
+        ('adocoes')->paginate(5);
+        return
+        view ('adocoes.index')
+        ->with(compact('adocoes'));
+
     }
 
     /**

@@ -17,7 +17,9 @@ class StatusFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'id_status' => fake()->numberBetween(),
+            'id_adocao' => fake()->numberBetween(),
+            'status' => fake()->numberBetween()
         ];
     }
 }
