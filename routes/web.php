@@ -46,6 +46,7 @@ Route::prefix('adocoes')
                 ->name('adocoes.destroy');
         });
 
+
 Route::controller(ProfileController::class)->middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
