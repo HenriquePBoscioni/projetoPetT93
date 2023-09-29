@@ -61,6 +61,7 @@ Route::prefix('adocoes')
             Route::post('excluir/{id}', 'destroy')
                 ->name('adocoes.destroy');
         });
+        // teste
 
 Route::controller(ProfileController::class)->middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
