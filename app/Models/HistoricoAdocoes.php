@@ -5,17 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-<<<<<<< HEAD
-=======
+
+
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
->>>>>>> master
+
 
 class Historico_adocoes extends Model
 {
-<<<<<<< HEAD
+
     use HasFactory, SoftDeletes;
     // gustavo s
-=======
+
     use HasFactory , SoftDeletes;
 
     protected $table = 'HistoricoAdocao';
@@ -47,5 +47,5 @@ class Historico_adocoes extends Model
     {
         return $this->belongsTo(Adocoes::class, 'id_adocao', 'id_adocao');
     }
->>>>>>> master
+
 }
