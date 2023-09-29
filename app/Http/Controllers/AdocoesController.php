@@ -8,8 +8,11 @@ use App\Models\{
     HistoricoAdocoes,
     Status,
     Clientes,
-    Pet
+    Pet,
+    Portes
+
 };
+
 
 class AdocoesController extends Controller
 {
