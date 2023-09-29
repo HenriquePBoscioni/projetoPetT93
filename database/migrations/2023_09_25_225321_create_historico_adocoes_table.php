@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('historicoAdocoes', function (Blueprint $table) {
-            $table->increments('id_HistoricoAdocao');
-            $table->integer('id_adocao');
-            $table->dateTime('dt');
-            $table->text('historico');
+        Schema::create('historico_adocoes', function (Blueprint $table) {
+            $table->increments('id_historico_adocao');
+            $table->int('id_adocao');
+            $table->dateTime('dt_adocao');
+            $table->dateTime('dt_devolucao');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

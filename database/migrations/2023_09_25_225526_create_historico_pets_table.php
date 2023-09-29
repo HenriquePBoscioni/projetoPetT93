@@ -19,6 +19,7 @@ return new class extends Migration
             $table->dateTime('dtDevolucao');
             $table->timestamps();
         });
+
     }
 
     /**

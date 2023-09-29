@@ -12,9 +12,24 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('statuses', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_status');
+            $table->string('status', 45);
             $table->timestamps();
+            $table->softDeletes();
         });
+        App\Models\status::create([
+            'id_status' => 1,
+            'status' => 'Em Andamento'
+        ]);
+        App\Models\status::create([
+            'id_status' => 2,
+            'status' => 'Adotado'
+        ]);
+        App\Models\status::create([
+            'id_status' => 3,
+            'status' => 'Devolucao'
+        ]);
+
     }
 
     /**

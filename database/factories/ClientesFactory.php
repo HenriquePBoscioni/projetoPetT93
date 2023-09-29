@@ -22,7 +22,6 @@ class ClientesFactory extends Factory
             'nome' => fake()->name(),
             'nascimento' => fake()->dateTimeBetween('-90 years','-20 years'),
             'renda' => fake()->numberBetween(1,99999)
-
         ];
     }
 }
