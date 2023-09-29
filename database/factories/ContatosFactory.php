@@ -17,10 +17,10 @@ class ContatosFactory extends Factory
     public function definition(): array
     {
         return [
-            'id_contato' = fake()->numberBetween(1,10),
-            'id_cliente' = fake()->numberBetween(1,10),
-            'email' = fake()->text(50),
-            'descrição' = fake()->nemberBetween(11)
+            'id_contato' => fake()->numberBetween(1,10),
+            'id_cliente' => fake()->numberBetween(1,10),
+            'email' => fake()->email(),
+            'descrição' => fake()->text()
         ];
     }
 }

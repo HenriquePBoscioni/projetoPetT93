@@ -20,12 +20,12 @@ return new class extends Migration
             $table->softDeletes();
         });
 
-        \App\Models\GeneroPets::create([
+        \App\Models\GenerosPets::create([
             'id_genero' => 1,
             'genero' => 'masculino'
 
         ]);
-        \App\Models\GeneroPets::create([
+        \App\Models\GenerosPets::create([
             'id_genero' => 2,
             'genero' => 'feminino'
 
