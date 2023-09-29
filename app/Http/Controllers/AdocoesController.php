@@ -19,6 +19,7 @@ class AdocoesController extends Controller
     public function index()
     {
         //
+        //teste
     }
 
     /**
