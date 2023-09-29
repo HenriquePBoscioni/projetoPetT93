@@ -19,7 +19,7 @@ class AdocoesController extends Controller
     public function index()
     {
         $adocao = Adocoes::orderBy('id_adocao')->paginate(10);
-        return view('adocao.index')
+        return view('adocoes.index')->with(compact('adocoes'));
     }
 
     /**
@@ -27,7 +27,8 @@ class AdocoesController extends Controller
      */
     public function create()
     {
-        //
+        $adocao_create = null;
+        return view('adocoes.index')->with(compact('adocao_create'));
     }
 
     /**
@@ -35,7 +36,9 @@ class AdocoesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Adocoes::create($request->all());
+
+        return redirect()->route('adocoes.index')->with('novo','Teste adocao');
     }
 
     /**
@@ -43,7 +46,8 @@ class AdocoesController extends Controller
      */
     public function show(Adocoes $adocoes)
     {
-        //
+        $adocao_show = Adocoes::with([
+        ]);
     }
 
     /**
