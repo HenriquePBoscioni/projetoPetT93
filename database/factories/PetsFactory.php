@@ -20,7 +20,7 @@ class PetsFactory extends Factory
             'id_pet' => fake()->numberBetween(1,4),
             'nome' => fake()->text(),
             'idade' => fake()->numberBetween(),
-            'descrição' => fake()->text()
+            'descricao' => fake()->text()
         ];
     }
 }

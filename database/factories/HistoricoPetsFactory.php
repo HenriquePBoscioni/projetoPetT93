@@ -20,7 +20,7 @@ class HistoricoPetsFactory extends Factory
             'id_historicoPet' => fake()->numberBetween(1,20),
             'id_pet' => fake()->numberBetween(1,20),
             'HistoricoPet' => fake()->text(),
-            'personalidade' => fake()->text(),
+            'Personalidade' => fake()->text(),
             'dt_devolucao' => fake()->text(),
             'HistoricoPetscol'=> fake()->text()
         ];
