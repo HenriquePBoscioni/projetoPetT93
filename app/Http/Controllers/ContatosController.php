@@ -12,7 +12,8 @@ class ContatosController extends Controller
      */
     public function index()
     {
-
+        $contatosIndex = Contatos::orderby('id_contato')->paginate(10);
+        return view('contatos.index')->with(compact('contatos'));
     }
 
     /**
@@ -20,7 +21,9 @@ class ContatosController extends Controller
      */
     public function create()
     {
-        //
+        $contatos = null;
+        return view('contatos.index')->with(compact('contato_create'));
+
     }
 
     /**
@@ -28,7 +31,9 @@ class ContatosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Contatos::create($request->all());
+
+        return redirect()->route('contatos.index')->with('novo','Teste de contato')
     }
 
     /**
@@ -36,7 +41,7 @@ class ContatosController extends Controller
      */
     public function show(Contatos $contatos)
     {
-        //
+        $contatos = Contatos::find($id)
     }
 
     /**
@@ -44,7 +49,9 @@ class ContatosController extends Controller
      */
     public function edit(Contatos $contatos)
     {
-        //
+        $contatos = Contatos::find($id);
+        return view('contatos.form')->with(compact('contatos'));
+
     }
 
     /**
@@ -52,7 +59,11 @@ class ContatosController extends Controller
      */
     public function update(Request $request, Contatos $contatos)
     {
-        //
+        $contatos = Adocoes::find($id);
+        $contatos->update($request->all());
+        return redirect()
+            ->route('contatos.index')
+            ->with('atualizado', 'Atualizado com sucesso!');
     }
 
     /**
@@ -60,6 +71,9 @@ class ContatosController extends Controller
      */
     public function destroy(Contatos $contatos)
     {
-        //
+        Contatos::find($id)->delete();
+        return redirect()
+            ->back()
+            ->with('excluido', 'Excluído com sucesso!');
     }
 }
