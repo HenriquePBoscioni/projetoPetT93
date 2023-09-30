@@ -21,7 +21,7 @@ class AdocoesController extends Controller
      */
     public function index()
     {
-        $adocao = Adocoes::orderBy('id_adocao')->paginate(10);
+        $adocaoIndex = Adocoes::orderBy('id_adocao')->paginate(10);
         return view('adocoes.index')->with(compact('adocoes'));//
         //teste
     }
@@ -31,7 +31,7 @@ class AdocoesController extends Controller
      */
     public function create()
     {
-        $adocao_create = null;
+        $adocao = null;
         return view('adocoes.index')->with(compact('adocao_create'));
     }
 
@@ -48,33 +48,42 @@ class AdocoesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Adocoes $adocoes)
+    public function show(int $id)
     {
-        $adocao_show = Adocoes::with([
-        ]);
+        $adocao = Adocoes::find($id);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Adocoes $adocoes)
+    public function edit(int $id)
     {
-        //
+        $adocao = Adocoes::find($id);
+        return view('adocoes.form')->with(compact('adocoes'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Adocoes $adocoes)
+    public function update(Request $request, int $id)
     {
-        //
+        $adocao = Adocoes::find($id);
+        $adocao->update($request->all());
+        return redirect()
+            ->route('adocoes.index')
+            ->with('atualizado', 'Atualizado com sucesso!');
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Adocoes $adocoes)
+    public function destroy(int $id)
     {
-        //
+        Adocoes::find($id)->delete();
+        return redirect()
+            ->back()
+            ->with('excluido', 'Excluído com sucesso!');
+
     }
 }
