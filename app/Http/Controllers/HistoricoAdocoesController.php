@@ -12,7 +12,7 @@ class HistoricoAdocoesController extends Controller
      */
     public function index()
     {
-        $historico_adocoesIndex = HistoricoAdocoes::orderBy('id_historico_adocacao')->paginate(10);
+        $historico_adocoesIndex = HistoricoAdocoes::orderBy('id_Historico_adocacao')->paginate(2);
         return view('historicoAdocoes.index')->with(compact('HistoricoAdocoes'));
     }
 
@@ -32,7 +32,7 @@ class HistoricoAdocoesController extends Controller
     {
         HistoricoAdocoes::create($request->all());
 
-        return redirect()->route('historicoAdocoes.create')->with('novo','Teste historicoAdocoes');
+        return redirect()->route('historicoAdocoes.index')->with('novo','Teste historicoAdocoes');
     }
 
     /**
