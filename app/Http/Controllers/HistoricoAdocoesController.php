@@ -12,7 +12,8 @@ class HistoricoAdocoesController extends Controller
      */
     public function index()
     {
-        //
+        $historico_adocoesIndex = HistoricoAdocoes::orderBy('id_historico_adocacao')->paginate(10);
+        return view('historicoAdocoes.index')->with(compact('HistoricoAdocoes'));
     }
 
     /**
@@ -20,7 +21,8 @@ class HistoricoAdocoesController extends Controller
      */
     public function create()
     {
-        //
+        $historico_adocoes = null;
+        return view('historicoAdocoes.index')->with(compact('historicoAdocoes'));
     }
 
     /**
@@ -28,15 +30,17 @@ class HistoricoAdocoesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        HistoricoAdocoes::create($request->all());
+
+        return redirect()->route('historicoAdocoes.create')->with('novo','Teste historicoAdocoes');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Historico_adocoes $historico_adocoes)
+    public function show(int $id)
     {
-        //
+        $historico_adocoes = HistoricoAdocoes::find($id);
     }
 
     /**
@@ -44,7 +48,9 @@ class HistoricoAdocoesController extends Controller
      */
     public function edit(Historico_adocoes $historico_adocoes)
     {
-        //
+        $historico_adocoes = HistoricoAdocoes::find($id);
+        return view('historicoAdocoes.form')->with(compact('historicoAdocoes'));
+
     }
 
     /**
@@ -52,7 +58,11 @@ class HistoricoAdocoesController extends Controller
      */
     public function update(Request $request, Historico_adocoes $historico_adocoes)
     {
-        //
+        $historico_adocoes = HistoricoAdocoes::find($id);
+        $historico_adocoes->update($request->all());
+        return redirect()
+            ->route('historicoAdocoes.index')
+            ->with('atualizado','Atualizado com sucesso!');
     }
 
     /**
@@ -60,6 +70,9 @@ class HistoricoAdocoesController extends Controller
      */
     public function destroy(Historico_adocoes $historico_adocoes)
     {
-        //
+        HistoricoAdocoes::find($id)->delete();
+        return redirect()
+            ->back()
+            ->with('excluido','Excluido com sucesso!');
     }
 }

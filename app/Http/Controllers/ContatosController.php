@@ -33,7 +33,7 @@ class ContatosController extends Controller
     {
         Contatos::create($request->all());
 
-        return redirect()->route('contatos.index')->with('novo','Teste de contato')
+        return redirect()->route('contatos.index')->with('novo','Teste de contato');
     }
 
     /**
@@ -41,7 +41,7 @@ class ContatosController extends Controller
      */
     public function show(Contatos $contatos)
     {
-        $contatos = Contatos::find($id)
+        $contatos = Contatos::find($id);
     }
 
     /**
