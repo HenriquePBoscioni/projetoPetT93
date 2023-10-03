@@ -49,7 +49,7 @@ class HistoricoClientesController extends Controller
     public function edit(Historico_clientes $historico_clientes)
     {
         $historico_clientes = Historico_clintes::find($id);
-        return view('historicoAdocoes.form')->with(compact('HistoricoClientes'))
+        return view('historicoAdocoes.form')->with(compact('HistoricoClientes'));
     }
 
     /**
