@@ -19,7 +19,7 @@ class Contatos extends Model
         'deleted_at'
     ];
 
-    protected $fillabel = [
+    protected $fillable = [
         'id_contato',
         'id_cliente',
         'email',

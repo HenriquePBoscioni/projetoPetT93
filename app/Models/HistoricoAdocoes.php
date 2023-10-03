@@ -29,7 +29,7 @@ class HistoricoAdocoes extends Model
 
 
     ];
-    protected $fillabel = [
+    protected $fillable = [
         'id_HistoricoAdocacao',
         'id_adocao',
         'dt_adocao',

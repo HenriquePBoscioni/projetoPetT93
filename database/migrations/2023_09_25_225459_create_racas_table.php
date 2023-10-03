@@ -11,128 +11,105 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Raças', function (Blueprint $table) {
-            $table->increments('id_raça');
-            $table->string('raça', 45);
-            $table->string('InfoRaça', 45);
+        Schema::create('racas', function (Blueprint $table) {
+            $table->increments('id_raca');
+            $table->string('raca', 45);
             $table->timestamps();
             $table->softDeletes();
         });
-            // RAÇAS DE CACHORROS
-        \app\Models\Racas::create([
-            'id_Raca' => 1,
-            'Raca' => 'Pastor-Alemao'
+            // RACAS DE CACHORROS
+        App\Models\Racas::create([
+            'id_raca' => 1,
+            'raca' => 'Pastor-Alemao'
         ]);
-        \app\Models\Racas::create([
-            'id_Raca' => 2,
-            'Raca' => 'Rottweiler'
+        App\Models\Racas::create([
+            'id_raca' => 2,
+            'raca' => 'Rottweiler'
         ]);
-        \app\Models\Racas::create([
-            'id_Raca' => 3,
-            'Raca' => 'Golden'
+        App\Models\Racas::create([
+            'id_raca' => 3,
+            'raca' => 'Golden'
         ]);
-        \app\Models\Racas::create([
-            'id_Raca' => 4,
-            'Raca' => 'Vira-Lata'
-        ]);
-
-        //RAÇAS DE GATO
-        \app\Models\Racas::create([
-            'id_Raca' => 5,
-            'Raca' => 'Gato Persa'
-        ]);
-        \app\Models\Racas::create([
-            'id_Raca' => 6,
-            'Raca' => 'Gato Europeu'
-        ]);
-        \app\Models\Racas::create([
-            'id_Raca' => 7,
-            'Raca' => 'Gato Siamês'
+        App\Models\Racas::create([
+            'id_raca' => 4,
+            'raca' => 'Vira-Lata'
         ]);
 
-        \app\Models\Racas::create([
-            'id_Raca' => 8,
-            'Raca' => 'Munchkin'
+        //RACAS DE GATO
+        App\Models\Racas::create([
+            'id_raca' => 5,
+            'raca' => 'Gato Persa'
+        ]);
+        App\Models\Racas::create([
+            'id_raca' => 6,
+            'raca' => 'Gato Europeu'
+        ]);
+        App\Models\Racas::create([
+            'id_raca' => 7,
+            'raca' => 'Gato Siamês'
         ]);
 
-        //RAÇAS DE AVES
-        \app\Models\Racas::create([
-            'id_Raca' => 9,
-            'Raca' => 'Papagaio'
-        ]);
-        \app\Models\Racas::create([
-            'id_Raca' => 10,
-            'Raca' => 'Periquito'
-        ]);
-        \app\Models\Racas::create([
-            'id_Raca' => 11,
-            'Raca' => 'Canario'
-        ]);
-        \app\Models\Racas::create([
-            'id_Raca' => 12,
-            'Raca' => 'Calopsita'
+        App\Models\Racas::create([
+            'id_raca' => 8,
+            'raca' => 'Munchkin'
         ]);
 
-        //RAÇAS DE REPETIEIS
-
-        \app\Models\Racas::create([
-            'id_Raca' => 13,
-            'Raca' => 'Tartaruga'
+        //RACAS DE AVES
+        App\Models\Racas::create([
+            'id_raca' => 9,
+            'raca' => 'Papagaio'
+        ]);
+        App\Models\Racas::create([
+            'id_raca' => 10,
+            'raca' => 'Periquito'
         ]);
         \app\Models\Racas::create([
-            'id_Raca' => 14,
-            'Raca' => 'Camaleao'
+            'id_raca' => 11,
+            'raca' => 'Canario'
+        ]);
+        App\Models\Racas::create([
+            'id_raca' => 12,
+            'raca' => 'Calopsita'
         ]);
 
-        \app\Models\Racas::create([
-            'id_Raca' => 15,
-            'Raca' => 'Tegu Argentino'
-        ]);
-        \app\Models\Racas::create([
-            'id_Raca' => 16,
-            'Raca' => 'Python-Real'
-        ]);
+        //RACAS DE REPTEIS
 
-        //RAÇAS DE ROEDORES
-
-        \app\Models\Racas::create([
-            'id_Raca' => 17,
-            'Raca' => 'Porquinho-da-Índia'
+        App\Models\Racas::create([
+            'id_raca' => 13,
+            'raca' => 'Tartaruga'
         ]);
-        \app\Models\Racas::create([
-            'id_Raca' => 18,
-            'Raca' => 'Rato-De-Estimação(Fancy Rat)'
-        ]);
-        \app\Models\Racas::create([
-            'id_Raca' => 19,
-            'Raca' => 'Hamster Sirio(Golden)'
-        ]);
-        \app\Models\Racas::create([
-            'id_Raca' => 20,
-            'Raca' => 'Hamster Anão Russo'
+        App\Models\Racas::create([
+            'id_raca' => 14,
+            'raca' => 'Camaleao'
         ]);
 
+        App\Models\Racas::create([
+            'id_raca' => 15,
+            'raca' => 'Tegu Argentino'
+        ]);
+        App\Models\Racas::create([
+            'id_raca' => 16,
+            'raca' => 'Python-Real'
+        ]);
 
+        //RACAS DE ROEDORES
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        App\Models\Racas::create([
+            'id_raca' => 17,
+            'raca' => 'Porquinho-da-Índia'
+        ]);
+        App\Models\Racas::create([
+            'id_raca' => 18,
+            'raca' => 'Rato-De-Estimacão(Fancy Rat)'
+        ]);
+        App\Models\Racas::create([
+            'id_raca' => 19,
+            'raca' => 'Hamster Sirio(Golden)'
+        ]);
+        App\Models\Racas::create([
+            'id_raca' => 20,
+            'raca' => 'Hamster Anão Russo'
+        ]);
     }
 
     /**

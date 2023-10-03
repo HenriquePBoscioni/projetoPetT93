@@ -21,7 +21,7 @@ class HistoricoPets extends Model
         'dt_devolucao'
     ];
 
-    protected $fillabel = [
+    protected $fillable = [
         'id_historicoPet',
         'id_pet',
         'HistoricoPet',
