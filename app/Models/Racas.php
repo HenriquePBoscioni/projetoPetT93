@@ -11,7 +11,7 @@ class Racas extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'Racas';
+    protected $table = 'racas';
     protected $primaryKey = 'id_raca';
     protected $dates = [
         'created_at',
@@ -19,11 +19,10 @@ class Racas extends Model
         'deleted_at'
     ];
 
-    protected $fillabel = [
+    protected $fillable = [
         'id_raca',
         'id_pet',
-        'raca',
-        'infoRaca'
+        'raca'
     ];
 
     public function Pets():BelongsTo{

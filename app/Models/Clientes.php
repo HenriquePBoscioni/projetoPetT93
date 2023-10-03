@@ -21,7 +21,7 @@ class Clientes extends Model
         'nascimento'
     ];
 
-    protected $fillabel = [
+    protected $fillable = [
         'id_cliente',
         'id_sexo',
         'nome',

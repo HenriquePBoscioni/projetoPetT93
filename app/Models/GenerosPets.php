@@ -11,7 +11,7 @@ class GenerosPets extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'GeneroPets';
+    protected $table = 'generoPets';
     protected $primaryKey = 'id_genero';
     protected $dates = [
         'created_at',
@@ -19,13 +19,12 @@ class GenerosPets extends Model
         'deleted_at'
     ];
 
-    protected $fillabel = [
+    protected $fillable = [
         'id_genero',
-        'id_pet',
         'genero'
     ];
 
     public function Pets():BelongsTo{
-        return $this->belongsTo(Pets::class, 'id_pet', 'id_pet');
+        return $this->belongsTo(Pets::class, 'id_genero', 'id_genero');
     }
 }
