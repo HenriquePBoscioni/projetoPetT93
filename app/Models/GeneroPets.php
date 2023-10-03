@@ -19,7 +19,7 @@ class GenerosPets extends Model
         'deleted_at'
     ];
 
-    protected $fillabel = [
+    protected $fillable = [
         'id_genero',
         'id_pet',
         'genero'

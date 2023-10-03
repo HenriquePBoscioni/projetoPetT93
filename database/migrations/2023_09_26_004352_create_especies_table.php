@@ -18,27 +18,27 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        \App\Models\Especies::create([
+        App\Models\Especies::create([
             'id_especie' => 1,
             'especie' => 'cachorro'
 
         ]);
-        \App\Models\Especies::create([
+        App\Models\Especies::create([
             'id_especie' => 2,
             'especie' => 'gato'
 
         ]);
-        \App\Models\Especies::create([
+        App\Models\Especies::create([
             'id_especie' => 3,
             'especie' => 'ave'
 
         ]);
-        \App\Models\Especies::create([
+        App\Models\Especies::create([
             'id_especie' => 4,
             'especie' => 'reptil'
 
         ]);
-        \App\Models\Especies::create([
+        App\Models\Especies::create([
             'id_especie' => 5,
             'especie' => 'roedores'
 

@@ -22,7 +22,7 @@ class Adocoes extends Model
         'dt_inicio_pa',
         'dt_devolucao',
     ];
-    protected $fillabel = [
+    protected $fillable = [
         'id_cliente',
         'id_pet',
         'id_Status',

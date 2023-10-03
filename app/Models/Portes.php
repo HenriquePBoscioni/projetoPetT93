@@ -20,7 +20,7 @@ class Portes extends Model
         'deleted_at'
     ];
 
-    protected $fillabel = [
+    protected $fillable = [
         'id_portes',
         'id_pet',
         'tamanho'

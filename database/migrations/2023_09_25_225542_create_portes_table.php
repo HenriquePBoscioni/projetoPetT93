@@ -20,19 +20,19 @@ return new class extends Migration
             $table->softDeletes();
         });
 
-        \App\Models\Portes::create([
+        App\Models\Portes::create([
           'id_porte' => 1,
           'porte' => 'não informado'
         ]);
-        \App\Models\Portes::create([
+        App\Models\Portes::create([
             'id_porte' => 2,
             'porte' => 'pequeno'
           ]);
-          \App\Models\Portes::create([
+          App\Models\Portes::create([
             'id_porte' => 3,
             'porte' => 'medio'
           ]);
-          \App\Models\Portes::create([
+          App\Models\Portes::create([
             'id_porte' => 4,
             'porte' => 'grande'
           ]);
