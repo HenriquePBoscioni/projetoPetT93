@@ -12,7 +12,8 @@ class HistoricoClientesController extends Controller
      */
     public function index()
     {
-        //
+        $historico_clientesIndex = Historico_clientes::ordeBy( 'id_historico')->paginate();
+        return view('historicoCliente.index')->with(compact('HistoricoClientes'));
     }
 
     /**
@@ -20,7 +21,8 @@ class HistoricoClientesController extends Controller
      */
     public function create()
     {
-        //
+        $historico_clientes = null;
+        return view('historicoAdocoes.index')->with(compact('HistoricoClientes_create'));
     }
 
     /**
@@ -28,7 +30,9 @@ class HistoricoClientesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Historico_clientes::create($request->all());
+
+        return redirect()->route('historicoClientes.index')->with('novo','Teste historicoClientes');
     }
 
     /**
@@ -36,7 +40,7 @@ class HistoricoClientesController extends Controller
      */
     public function show(Historico_clientes $historico_clientes)
     {
-        //
+        $historico_clientes = Historico_clientes::find($id);
     }
 
     /**
@@ -44,7 +48,8 @@ class HistoricoClientesController extends Controller
      */
     public function edit(Historico_clientes $historico_clientes)
     {
-        //
+        $historico_clientes = Historico_clintes::find($id);
+        return view('historicoAdocoes.form')->with(compact('HistoricoClientes'));
     }
 
     /**
@@ -52,7 +57,11 @@ class HistoricoClientesController extends Controller
      */
     public function update(Request $request, Historico_clientes $historico_clientes)
     {
-        //
+        $historico_clientes = Historico_clientes::find($id);
+        $historico_clientes->update($request->all());
+        return redirect()
+            ->route('historicoAdocoes.index')
+            ->with('atualizado', 'Atualizado com sucesso!');
     }
 
     /**
@@ -60,6 +69,9 @@ class HistoricoClientesController extends Controller
      */
     public function destroy(Historico_clientes $historico_clientes)
     {
-        //
+        Historico_clientes::find($id)->delete();
+        return redirect()
+            ->back()
+            ->with('excluido', 'Excluído com sucesso!');
     }
 }
