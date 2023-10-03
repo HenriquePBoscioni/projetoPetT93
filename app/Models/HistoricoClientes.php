@@ -20,7 +20,7 @@ class Historico_clientes extends Model
         'dt_adocao'
     ];
 
-    protected $fillabel = [
+    protected $fillable = [
         'id_historico',
         'id_cliente',
         'dt_adocao',

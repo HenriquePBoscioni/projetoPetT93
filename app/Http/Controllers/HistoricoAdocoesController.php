@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Historico_adocoes;
 use App\Models\Historico_clientes;
+use App\Models\HistoricoPets;
 use Illuminate\Http\Request;
 
 class HistoricoAdocoesController extends Controller

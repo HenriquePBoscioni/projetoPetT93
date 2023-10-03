@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('cores', function (Blueprint $table) {
             $table->increments('id_cor');
-            $table->int('id_pet');
             $table->string('cor', 45);
             $table->timestamps();
             $table->softDeletes();
@@ -34,11 +33,7 @@ return new class extends Migration
             'id_cor' => 4,
             'cor' => 'Cinza'
         ]);
-
-
-
     }
-
     /**
      * Reverse the migrations.
      */

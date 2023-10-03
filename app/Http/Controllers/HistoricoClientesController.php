@@ -12,7 +12,11 @@ class HistoricoClientesController extends Controller
      */
     public function index()
     {
-        //
+
+        $historico_clientesIndex = Historico_clientes::ordeBy( 'id_historico')->paginate();
+        return view('historicoCliente.index')->with(compact('HistoricoClientes'));
+
+
     }
 
     /**
@@ -20,7 +24,8 @@ class HistoricoClientesController extends Controller
      */
     public function create()
     {
-        //
+        $historico_clientes = null;
+        return view('historicoAdocoes.index')->with(compact('HistoricoClientes_create'));
     }
 
     /**
@@ -28,38 +33,48 @@ class HistoricoClientesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Historico_clientes::create($request->all());
+
+        return redirect()->route('historicoClientes.index')->with('novo','Teste historicoClientes');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Historico_clientes $historico_clientes)
+    public function show(int $id)
     {
-        //
+        $historico_clientes = Historico_clientes::find($id);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Historico_clientes $historico_clientes)
+    public function edit(int $id)
     {
-        //
+        $historico_clientes = Historico_clientes::find($id);
+        return view('historicoAdocoes.form')->with(compact('HistoricoClientes'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Historico_clientes $historico_clientes)
+    public function update(Request $request, int $id)
     {
-        //
+        $historico_clientes = Historico_clientes::find($id);
+        $historico_clientes->update($request->all());
+        return redirect()
+            ->route('historicoAdocoes.index')
+            ->with('atualizado', 'Atualizado com sucesso!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Historico_clientes $historico_clientes)
+    public function destroy(int $id)
     {
-        //
+        Historico_clientes::find($id)->delete();
+        return redirect()
+            ->back()
+            ->with('excluido', 'Excluído com sucesso!');
     }
 }

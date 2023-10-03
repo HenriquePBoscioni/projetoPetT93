@@ -11,18 +11,18 @@ class Pets extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'Pets';
+    protected $table = 'pets';
     protected $primaryKey = 'id_pet';
     protected $dates = [
         'created_at',
         'updated_at',
         'deleted_at',
     ];
-    protected $fillabel =
+    protected $fillable =
     [
         'id_pet',
         'nome',
-        'idade',
+        'nascimento',
         'descricao'
     ];
 

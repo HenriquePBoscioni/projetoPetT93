@@ -11,7 +11,7 @@ class Cores extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'Cores';
+    protected $table = 'cores';
     protected $primaryKey = 'id_cor';
     protected $dates = [
         'created_at',
@@ -19,13 +19,12 @@ class Cores extends Model
         'deleted_at'
     ];
 
-    protected $fillabel = [
+    protected $fillable = [
         'id_cor',
-        'id_pet',
         'cor'
     ];
 
     public function Pets():BelongsTo{
-        return $this->belongsTo(Pets::class, 'id_pet', 'id_pet');
+        return $this->belongsTo(Pets::class, 'id_cor', 'id_cor');
     }
 }

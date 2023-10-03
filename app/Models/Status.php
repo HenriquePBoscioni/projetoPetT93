@@ -11,7 +11,7 @@ class Status extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'Status';
+    protected $table = 'status';
     protected $primaryKey = 'id_status';
     protected $dates = [
         'created_at',
@@ -19,14 +19,13 @@ class Status extends Model
         'deleted_at'
     ];
 
-    protected $fillabel = [
+    protected $fillable = [
         'id_status',
-        'id_adocao',
         'status'
     ];
 
     public function Adocoes():BelongsTo{
-        return $this->belongsTo(Adocoes::class, 'id_adocao', 'id_adocao');
+        return $this->belongsTo(Adocoes::class, 'id_status', 'id_status');
     }
 
 }
