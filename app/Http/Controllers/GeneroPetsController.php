@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\GeneroPets;
+use App\Models\GenerosPets;
 use Illuminate\Http\Request;
 
 class GeneroPetsController extends Controller
@@ -34,7 +35,7 @@ class GeneroPetsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(GeneroPets $generoPets)
+    public function show(GenerosPets $generoPets)
     {
         //
     }
@@ -42,7 +43,7 @@ class GeneroPetsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(GeneroPets $generoPets)
+    public function edit(GenerosPets $generoPets)
     {
         //
     }
@@ -50,7 +51,7 @@ class GeneroPetsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, GeneroPets $generoPets)
+    public function update(Request $request, GenerosPets $generoPets)
     {
         //
     }
@@ -58,7 +59,7 @@ class GeneroPetsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(GeneroPets $generoPets)
+    public function destroy(GenerosPets $generoPets)
     {
         //
     }
