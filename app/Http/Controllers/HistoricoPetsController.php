@@ -12,7 +12,8 @@ class HistoricoPetsController extends Controller
      */
     public function index()
     {
-        //
+        $historicoPets_Index = HistoricoPets::orderBy('id_historicoPet');
+        return view('historicoPet.index')->with(compact('HistoricoPets'));//
     }
 
     /**
@@ -20,7 +21,8 @@ class HistoricoPetsController extends Controller
      */
     public function create()
     {
-        //
+        $historicoPets = null;
+        return view('historicoPet.index')->with(compact('historicoPets_create'));
     }
 
     /**
@@ -28,38 +30,49 @@ class HistoricoPetsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        HistoricoPets::create($request->all());
+
+        return redirect()->route('historicoPets.index')->with('novo', 'Teste HistoricoPets');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(HistoricoPets $historicoPets)
+    public function show(int $id)
     {
-        //
+        $historicoPets = HistoricoPets::find($id);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(HistoricoPets $historicoPets)
+    public function edit(int $id)
     {
-        //
+        $historicoPets = HistoricoPets::find($id);
+        return view('adocoes.form')->with(compact('adocoes'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, HistoricoPets $historicoPets)
+    public function update(Request $request, int $id)
     {
-        //
+        $historicoPets = HistoricoPets::find($id);
+        $historicoPets->update($request->all());
+        return redirect()
+            ->route('adocoes.index')
+            ->with('atualizado', 'Atualizado com sucesso!');
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(HistoricoPets $historicoPets)
+    public function destroy(int $id)
     {
-        //
+        HistoricoPets::find($id)->delete();
+        return redirect()
+            ->back()
+            ->with('excluido', 'Excluído com sucesso!');
     }
 }

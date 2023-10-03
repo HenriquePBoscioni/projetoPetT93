@@ -12,7 +12,8 @@ class PetsController extends Controller
      */
     public function index()
     {
-        //
+        $pets_Index = Pets::orderBy('id_pet')->paginate(10);
+        return view('pet.index')->with(compact('Pets'));//
     }
 
     /**
@@ -20,7 +21,8 @@ class PetsController extends Controller
      */
     public function create()
     {
-        //
+        $pets = null;
+        return view('pet.index')->with(compact('Pets_create'));
     }
 
     /**
@@ -28,38 +30,48 @@ class PetsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Pets::create($request->all());
+
+        return redirect()->route('pets.index')->with('novo','Teste adocao');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Pets $pets)
+    public function show(int $id)
     {
-        //
+        $pets = Pets::find($id);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Pets $pets)
+    public function edit(int $id)
     {
-        //
+        $pets = Pets::find($id);
+        return view('pet.form')->with(compact('pets'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Pets $pets)
+    public function update(Request $request, int $id)
     {
-        //
+        $pets = Pets::find($id);
+        $pets->update($request->all());
+        return redirect()
+            ->route('adocoes.index')
+            ->with('atualizado', 'Atualizado com sucesso!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Pets $pets)
+    public function destroy(int $id)
     {
-        //
+        Pets::find($id)->delete();
+        return redirect()
+            ->back()
+            ->with('excluido', 'Excluído com sucesso!');
     }
 }
