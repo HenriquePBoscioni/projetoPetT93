@@ -13,6 +13,8 @@ class HistoricoAdocoesController extends Controller
     public function index()
     {
         $historico_adocoesIndex = HistoricoAdocoes::orderBy('id_Historico_adocacao')->paginate(2);
+
+        $historico_adocoesIndex = HistoricoAdocoesController::orderBy('id_historico_adocacao')->paginate(10);
         return view('historicoAdocoes.index')->with(compact('HistoricoAdocoes'));
     }
 
