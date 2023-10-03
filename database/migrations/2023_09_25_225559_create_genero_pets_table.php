@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\GeneroPets;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('generoPets', function (Blueprint $table) {
             $table->increments('id_genero');
-            $table->integer('id_pet');
             $table->string('genero',45);
             $table->timestamps();
             $table->softDeletes();
