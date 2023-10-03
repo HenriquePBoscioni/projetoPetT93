@@ -15,7 +15,7 @@ class HistoricoAdocoesController extends Controller
     public function index()
     {
         $historico_adocoesIndex = Historico_adocoes::ordeBy('id_HistoricoAdocacao')->paginate(2);
-        return view('historicoAdocoes.index')->with(compact('HistoricoAdocao'));
+        return view('historicoAdocoes.index')->with(compact('historico_adocoesIndex'));
     }
 
     /**
@@ -24,7 +24,7 @@ class HistoricoAdocoesController extends Controller
     public function create()
     {
         $historico_adocoes = null;
-        return view('historicoAdocoes.index')->with(compact('historicoAdocoes'));
+        return view('historicoAdocoes.index')->with(compact('historico_adocoes'));
     }
 
     /**
@@ -51,7 +51,7 @@ class HistoricoAdocoesController extends Controller
     public function edit(Historico_adocoes $historico_adocoes, int $id)
     {
         $historico_adocoes = Historico_adocoes::find($id);
-        return view('historicoAdocoes.form')->with(compact('historicoAdocoes'));
+        return view('historicoAdocoes.form')->with(compact('historico_adocoes'));
 
     }
 

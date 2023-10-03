@@ -14,7 +14,7 @@ class HistoricoClientesController extends Controller
     {
 
         $historico_clientesIndex = Historico_clientes::ordeBy( 'id_historico')->paginate();
-        return view('historicoCliente.index')->with(compact('HistoricoClientes'));
+        return view('historicoCliente.index')->with(compact('historico_clientesIndex'));
 
 
     }
@@ -25,7 +25,7 @@ class HistoricoClientesController extends Controller
     public function create()
     {
         $historico_clientes = null;
-        return view('historicoAdocoes.index')->with(compact('HistoricoClientes_create'));
+        return view('historicoCliente.index')->with(compact('historico_clientes'));
     }
 
     /**
@@ -52,7 +52,7 @@ class HistoricoClientesController extends Controller
     public function edit(int $id)
     {
         $historico_clientes = Historico_clientes::find($id);
-        return view('historicoAdocoes.form')->with(compact('HistoricoClientes'));
+        return view('historicoAdocoes.form')->with(compact('historico_clientes'));
     }
 
     /**

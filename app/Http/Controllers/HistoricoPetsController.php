@@ -13,7 +13,7 @@ class HistoricoPetsController extends Controller
     public function index()
     {
         $historicoPets_Index = HistoricoPets::orderBy('id_historicoPet');
-        return view('historicoPet.index')->with(compact('HistoricoPets'));//
+        return view('historicoPet.index')->with(compact('historicoPets_Index'));//
     }
 
     /**
@@ -49,7 +49,7 @@ class HistoricoPetsController extends Controller
     public function edit(int $id)
     {
         $historicoPets = HistoricoPets::find($id);
-        return view('adocoes.form')->with(compact('adocoes'));
+        return view('historicoPet.form')->with(compact('historicoPets'));
     }
 
     /**
@@ -60,7 +60,7 @@ class HistoricoPetsController extends Controller
         $historicoPets = HistoricoPets::find($id);
         $historicoPets->update($request->all());
         return redirect()
-            ->route('adocoes.index')
+            ->route('historicoPets.index')
             ->with('atualizado', 'Atualizado com sucesso!');
 
     }
