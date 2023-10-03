@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Historico_adocoes;
 use App\Models\Historico_clientes;
+use App\Models\HistoricoPets;
 use Illuminate\Http\Request;
 
 class HistoricoAdocoesController extends Controller
@@ -13,15 +14,8 @@ class HistoricoAdocoesController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
         $historico_adocoesIndex = Historico_adocoes::ordeBy('id_HistoricoAdocacao')->paginate(2);
         return view('historicoAdocoes.index')->with(compact('HistoricoAdocao'));
-=======
-        $historico_adocoesIndex = HistoricoAdocoes::orderBy('id_Historico_adocacao')->paginate(2);
-
-        $historico_adocoesIndex = HistoricoAdocoesController::orderBy('id_historico_adocacao')->paginate(10);
-        return view('historicoAdocoes.index')->with(compact('HistoricoAdocoes'));
->>>>>>> f94338ae5ae2c180fc00242ac130341854fce58b
     }
 
     /**
