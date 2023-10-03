@@ -12,7 +12,7 @@ class Portes extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'Portes';
+    protected $table = 'portes';
     protected $primaryKey = 'id_portes';
     protected $dates = [
         'created_at',
@@ -22,11 +22,10 @@ class Portes extends Model
 
     protected $fillable = [
         'id_portes',
-        'id_pet',
-        'tamanho'
+        'porte'
     ];
 
     public function Pets():BelongsTo{
-        return $this->belongsTo(Pets::class, 'id_pet', 'id_pet');
+        return $this->belongsTo(Pets::class, 'id_portes', 'id_portes');
     }
 }

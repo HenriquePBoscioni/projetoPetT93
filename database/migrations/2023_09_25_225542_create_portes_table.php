@@ -14,7 +14,6 @@ return new class extends Migration
     {
         Schema::create('portes', function (Blueprint $table) {
             $table->increments('id_porte');
-            $table->int('id_pet');
             $table->string('porte',45);
             $table->timestamps();
             $table->softDeletes();
