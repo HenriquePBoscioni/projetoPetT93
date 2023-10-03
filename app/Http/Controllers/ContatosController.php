@@ -12,7 +12,8 @@ class ContatosController extends Controller
      */
     public function index()
     {
-
+        $contatosIndex = Contatos::orderby('id_contato')->paginate(10);
+        return view('contatos.index')->with(compact('contatos'));
     }
 
     /**
@@ -20,7 +21,9 @@ class ContatosController extends Controller
      */
     public function create()
     {
-        //
+        $contatos = null;
+        return view('contatos.index')->with(compact('contato_create'));
+
     }
 
     /**
@@ -28,38 +31,49 @@ class ContatosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Contatos::create($request->all());
+
+        return redirect()->route('contatos.index')->with('novo','Teste de contato');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Contatos $contatos)
+    public function show(int $id)
     {
-        //
+        $contatos = Contatos::find($id);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Contatos $contatos)
+    public function edit(int $id)
     {
-        //
+        $contatos = Contatos::find($id);
+        return view('contatos.form')->with(compact('contatos'));
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Contatos $contatos)
+    public function update(int $id, Request $request)
     {
-        //
+        $contatos = Contatos::find($id);
+        $contatos->update($request->all());
+        return redirect()
+            ->route('contatos.index')
+            ->with('atualizado', 'Atualizado com sucesso!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Contatos $contatos)
+    public function destroy(int $id)
     {
-        //
+        Contatos::find($id)->delete();
+        return redirect()
+            ->back()
+            ->with('excluido', 'Excluído com sucesso!');
     }
 }

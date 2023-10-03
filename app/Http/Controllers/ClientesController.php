@@ -12,7 +12,8 @@ class ClientesController extends Controller
      */
     public function index()
     {
-        //
+        $clientes_index = Clientes::ordeBy('id_cliente');
+        return view('clientes.index')->with(compact('Clientes'));
     }
 
     /**
@@ -20,7 +21,8 @@ class ClientesController extends Controller
      */
     public function create()
     {
-        //
+        $clientes = null;
+        return view('clientes.index')->with(compact('Clientes_create'));
     }
 
     /**
@@ -28,38 +30,49 @@ class ClientesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Clientes::create($request->all());
+
+        return redirect()->route('clientes.index')->with('novo','Teste Clientes');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Clientes $clientes)
+    public function show(int $id)
     {
-        //
+        $clientes = Clientes::find($id);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Clientes $clientes)
+    public function edit(Clientes $clientes, int $id)
     {
-        //
+        $clientes = Clientes::find($id);
+        return view('clientes.form')->with(compact('historicoAdocoes'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Clientes $clientes)
+    public function update(Request $request, int $id)
     {
-        //
+        $clientes = Clientes::find($id);
+        $clientes->update($request->all());
+        return redirect()
+            ->route('clientes.index')
+            ->with('atualizado', 'Atualizado com sucesso!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Clientes $clientes)
+    public function destroy(int $id)
     {
-        //
+        Clientes::find($id)->delete();
+        return redirect()
+            ->back()
+            ->with('excluido', 'Excluído com sucesso!');
+
     }
 }
