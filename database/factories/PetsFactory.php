@@ -19,6 +19,7 @@ class PetsFactory extends Factory
         return [
             'id_pet' => fake()->numberBetween(1,4),
             'nome' => fake()->name(),
+            'pet' => fake()->name(),
             'idade' => fake()->numberBetween(1,15),
             'descrição' => fake()->text()
         ];
