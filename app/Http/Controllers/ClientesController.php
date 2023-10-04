@@ -49,7 +49,7 @@ class ClientesController extends Controller
     public function edit(Clientes $clientes, int $id)
     {
         $clientes = Clientes::find($id);
-        return view('clientes.form')->with(compact('historicoAdocoes'));
+        return view('clientes.form')->with(compact('clientes'));
     }
 
     /**

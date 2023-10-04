@@ -13,7 +13,7 @@ class PetsController extends Controller
     public function index()
     {
         $pets_Index = Pets::orderBy('id_pet')->paginate(10);
-        return view('pet.index')->with(compact('Pets'));//
+        return view('pets.index')->with(compact('pets_Index'));//
     }
 
     /**
@@ -22,7 +22,7 @@ class PetsController extends Controller
     public function create()
     {
         $pets = null;
-        return view('pet.index')->with(compact('Pets_create'));
+        return view('pets.index')->with(compact('pets'));
     }
 
     /**
@@ -49,7 +49,7 @@ class PetsController extends Controller
     public function edit(int $id)
     {
         $pets = Pets::find($id);
-        return view('pet.form')->with(compact('pets'));
+        return view('pets.form')->with(compact('pets'));
     }
 
     /**
@@ -60,7 +60,7 @@ class PetsController extends Controller
         $pets = Pets::find($id);
         $pets->update($request->all());
         return redirect()
-            ->route('adocoes.index')
+            ->route('pets.index')
             ->with('atualizado', 'Atualizado com sucesso!');
     }
 

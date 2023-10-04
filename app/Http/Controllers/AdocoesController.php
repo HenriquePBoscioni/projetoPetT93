@@ -32,7 +32,7 @@ class AdocoesController extends Controller
     public function create()
     {
         $adocao = null;
-        return view('adocoes.index')->with(compact('adocao_create'));
+        return view('adocoes.index')->with(compact('adocao'));
     }
 
     /**
@@ -59,7 +59,7 @@ class AdocoesController extends Controller
     public function edit(int $id)
     {
         $adocao = Adocoes::find($id);
-        return view('adocoes.form')->with(compact('adocoes'));
+        return view('adocoes.form')->with(compact('adocao'));
     }
 
     /**
