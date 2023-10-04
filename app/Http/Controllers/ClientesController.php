@@ -12,8 +12,8 @@ class ClientesController extends Controller
      */
     public function index()
     {
-        $clientes_index = Clientes::ordeBy('id_cliente');
-        return view('clientes.index')->with(compact('Clientes'));
+        $clientes = Clientes::ordeBy('id_clientes');
+        return view('clientes.Index')->with(compact('clientes'));
     }
 
     /**
@@ -22,7 +22,7 @@ class ClientesController extends Controller
     public function create()
     {
         $clientes = null;
-        return view('clientes.index')->with(compact('Clientes_create'));
+        return view('clientes.form')->with(compact('cliente'));
     }
 
     /**
@@ -32,7 +32,7 @@ class ClientesController extends Controller
     {
         Clientes::create($request->all());
 
-        return redirect()->route('clientes.index')->with('novo','Teste Clientes');
+        return redirect()->route('clientes.index')->with('novo','Teste cliente');
     }
 
     /**
@@ -40,7 +40,13 @@ class ClientesController extends Controller
      */
     public function show(int $id)
     {
-        $clientes = Clientes::find($id);
+        $clientes = Clientes::with([
+            'clientes',
+            'clientes.tipo',
+            'cliente.usuario',
+        ])->find($id);
+        return view('clientes.show')
+        ->with(compact('cliente'));
     }
 
     /**
@@ -49,7 +55,7 @@ class ClientesController extends Controller
     public function edit(Clientes $clientes, int $id)
     {
         $clientes = Clientes::find($id);
-        return view('clientes.form')->with(compact('historicoAdocoes'));
+        return view('clientes.form')->with(compact('clientes'));
     }
 
     /**
