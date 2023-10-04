@@ -21,7 +21,7 @@ class AdocoesController extends Controller
      */
     public function index()
     {
-        $adocoes = Adocoes::orderBy('id_adocao')->paginate(1);
+        $adocoes = Adocoes::orderBy('adocoes')->paginate(1);
         return view('adocoes.index')->with(compact('adocoes'));//
         //teste
     }
@@ -32,7 +32,7 @@ class AdocoesController extends Controller
     public function create()
     {
         $adocao = null;
-        return view('adocoes.index')->with(compact('adocao'));
+        return view('adocoes.form')->with(compact('adocao'));
     }
 
     /**
