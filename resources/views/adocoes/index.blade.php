@@ -18,15 +18,23 @@
                         ])->links() !!}
 {{-- /paginação --}}
 {{-- pesquisa --}}
-<div class="row">
-    <form action="{{ route('adocoes.index') }}" method="get">
+<form action="{{ route('adocoes.index') }}" method="get">
 
-        <input class="form-control col-md-4" type="search" name="search" id="search"
-            placeholder="Digite o que deseja pesquisar..."
-            value="{{ old('search',request()->get('search')) }}">
-
+<div class="row ">
+        <div class="col-md-5">
+            Pets
+            <input class="form-control col-md-6 " type="search" name="search" id="search"
+                placeholder="Digite o nome do Pet..."
+                value="{{ old('search',request()->get('search')) }}">
+        </div >
+        <div class="col-md-5">
+            Clientes
+            <input class="form-control col-md-6" type="search" name="search" id="search"
+                placeholder="Digite o nome do Cliente..."
+                value="{{ old('search',request()->get('search')) }}">
+        </div>
         {{-- data inicial --}}
-        <div class="col-md-3">
+        <div class="col-md-4">
             <label class="form-label" for="dt_inicial">
                 Data inicial
             </label>
@@ -35,7 +43,7 @@
         </div>
         {{-- /data inicial --}}
         {{-- data final --}}
-        <div class="col-md-3">
+        <div class="col-md-4">
             <label class="form-label" for="dt_final">
                 Data final
             </label>
@@ -45,10 +53,10 @@
         </div>
         {{-- /data final --}}
         <div class="col-md-3">
-            <label for="id_adocao" class="form-label">Centro de Custo*</label>
+            <label for="id_adocao" class="form-label">Status</label>
             <select id="id_adocao" name="id_adocao" class="form-select" >
                 <option value="">Escolha...</option>
-                @foreach ($adocoes->get() as $adocao )
+                @foreach ($adocoes as $adocao )
                 <option value="{{$adocao->adocoes}}">
                     {{ $adocao->adocoes}}
                 </option>
@@ -58,7 +66,7 @@
 
 
 
-        <input class="btn btn-success col-md-1" type="submit" value="Pesquisar">
+        <input class="btn btn-success col-md-3" type="submit" value="Pesquisar">
 
         @if(request()->get('search') !='')
         <a class="btn btn-primary col-md-1"
@@ -75,13 +83,12 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Vencimento</th>
-                <th>Tipo</th>
-                <th>Valor</th>
-                <th>Centro de Custo</th>
-                <th>Descrição</th>
-                <th>Usuário</th>
-                <th>Data do lançamento</th>
+                <th>Pets</th>
+                <th>Cliente</th>
+                <th>Status</th>
+                <th>Historico Adoção</th>
+                <th>Data inicial</th>
+                <th>Data inicial</th>
             </tr>
         </thead>
     </table>

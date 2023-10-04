@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('id_cliente');
             $table->integer('id_pet');
             $table->integer('id_status');
+            $table->string('adocao');
             $table->date('dt_inicio');
             $table->date('dt_inicio_pa');
             $table->date('dt_devolucao');
