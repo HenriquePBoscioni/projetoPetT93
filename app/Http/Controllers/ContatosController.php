@@ -12,8 +12,8 @@ class ContatosController extends Controller
      */
     public function index()
     {
-        $contatosIndex = Contatos::orderby('id_contato')->paginate(10);
-        return view('contatos.index')->with(compact('contatosIndex'));
+        $contatos = Contatos::orderby('id_contato')->paginate(10);
+        return view('contatos.index')->with(compact('contato'));
     }
 
     /**
@@ -21,8 +21,8 @@ class ContatosController extends Controller
      */
     public function create()
     {
-        $contatos = null;
-        return view('contatos.index')->with(compact('contato_create'));
+        $contato = null;
+        return view('contatos.index')->with(compact('contato'));
 
     }
 
@@ -49,8 +49,8 @@ class ContatosController extends Controller
      */
     public function edit(int $id)
     {
-        $contatos = Contatos::find($id);
-        return view('contatos.form')->with(compact('contatos'));
+        $contato = Contatos::find($id);
+        return view('contatos.form')->with(compact('contato'));
 
     }
 
@@ -59,8 +59,8 @@ class ContatosController extends Controller
      */
     public function update(int $id, Request $request)
     {
-        $contatos = Contatos::find($id);
-        $contatos->update($request->all());
+        $contato = Contatos::find($id);
+        $contato->update($request->all());
         return redirect()
             ->route('contatos.index')
             ->with('atualizado', 'Atualizado com sucesso!');
