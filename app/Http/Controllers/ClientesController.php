@@ -12,8 +12,8 @@ class ClientesController extends Controller
      */
     public function index()
     {
-        $clientes_index = Clientes::ordeBy('id_cliente');
-        return view('clientes.index')->with(compact('clientes_index'));
+        $clientes = Clientes::ordeBy('id_cliente');
+        return view('clientes.index')->with(compact('clientes'));
     }
 
     /**
@@ -21,8 +21,8 @@ class ClientesController extends Controller
      */
     public function create()
     {
-        $clientes = null;
-        return view('clientes.index')->with(compact('clientes'));
+        $cliente = null;
+        return view('clientes.index')->with(compact('cliente'));
     }
 
     /**
@@ -40,7 +40,7 @@ class ClientesController extends Controller
      */
     public function show(int $id)
     {
-        $clientes = Clientes::find($id);
+        $cliente = Clientes::find($id);
     }
 
     /**
@@ -48,8 +48,8 @@ class ClientesController extends Controller
      */
     public function edit(Clientes $clientes, int $id)
     {
-        $clientes = Clientes::find($id);
-        return view('clientes.form')->with(compact('clientes'));
+        $cliente = Clientes::find($id);
+        return view('clientes.form')->with(compact('cliente'));
     }
 
     /**
@@ -57,8 +57,8 @@ class ClientesController extends Controller
      */
     public function update(Request $request, int $id)
     {
-        $clientes = Clientes::find($id);
-        $clientes->update($request->all());
+        $cliente = Clientes::find($id);
+        $cliente->update($request->all());
         return redirect()
             ->route('clientes.index')
             ->with('atualizado', 'Atualizado com sucesso!');

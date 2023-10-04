@@ -14,8 +14,8 @@ class HistoricoAdocoesController extends Controller
      */
     public function index()
     {
-        $historico_adocoesIndex = Historico_adocoes::ordeBy('id_HistoricoAdocacao')->paginate(2);
-        return view('historicoAdocoes.index')->with(compact('historico_adocoesIndex'));
+        $historico_adocoes = Historico_adocoes::ordeBy('id_HistoricoAdocacao')->paginate(2);
+        return view('historicoAdocoes.index')->with(compact('historico_adocoes'));
     }
 
     /**
@@ -23,8 +23,8 @@ class HistoricoAdocoesController extends Controller
      */
     public function create()
     {
-        $historico_adocoes = null;
-        return view('historicoAdocoes.index')->with(compact('historico_adocoes'));
+        $historico_adocao = null;
+        return view('historicoAdocoes.index')->with(compact('historico_adocao'));
     }
 
     /**
@@ -42,7 +42,7 @@ class HistoricoAdocoesController extends Controller
      */
     public function show(int $id)
     {
-        $historico_adocoes = Historico_adocoes::find($id);
+        $historico_adocao = Historico_adocoes::find($id);
     }
 
     /**
@@ -50,18 +50,18 @@ class HistoricoAdocoesController extends Controller
      */
     public function edit(Historico_adocoes $historico_adocoes, int $id)
     {
-        $historico_adocoes = Historico_adocoes::find($id);
-        return view('historicoAdocoes.form')->with(compact('historico_adocoes'));
+        $historico_adocao = Historico_adocoes::find($id);
+        return view('historicoAdocoes.form')->with(compact('historico_adocao'));
 
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Historico_adocoes $historico_adocoes, int $id)
+    public function update(Request $request, int $id)
     {
-        $historico_adocoes = Historico_adocoes::find($id);
-        $historico_adocoes->update($request->all());
+        $historico_adocao = Historico_adocoes::find($id);
+        $historico_adocao->update($request->all());
         return redirect()
             ->route('historicoAdocoes.index')
             ->with('atualizado','Atualizado com sucesso!');
@@ -70,7 +70,7 @@ class HistoricoAdocoesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Historico_adocoes $historico_adocoes, int $id)
+    public function destroy( int $id)
     {
         Historico_adocoes::find($id)->delete();
         return redirect()
