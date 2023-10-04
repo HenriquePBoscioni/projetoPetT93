@@ -64,9 +64,10 @@
             </select>
         </div>
 
-
-
-        <input class="btn btn-success col-md-3" type="submit" value="Pesquisar">
+        <div>
+            <br>
+            <input class="btn btn-success col-md-1" type="submit" value="Pesquisar">
+        </div>
 
         @if(request()->get('search') !='')
         <a class="btn btn-primary col-md-1"
@@ -93,6 +94,53 @@
         </thead>
     </table>
 </div>
+<tbody class="table-group-divider">
+    @forelse ($pets as $pet )
+    <tr>
+        <td scope="row" class="col-2">
+            <div class="flex-column">
+                {{-- ver anexo --}}
+                {{-- {{ Storage::url('/anexos/'.$lancamento->anexo)}} --}}
+                @if ($pet->anexo)
+                <a class="btn btn-success" href="{{ Storage::url($pet->anexo)}}"
+                    target="_blank">
+                    <i class="bi bi-paperclip"></i>
+                </a>
+                @endif
+
+                {{-- editar --}}
+                <a class="btn btn-dark" href="#">
+                    <i class="bi bi-pencil-square"></i>
+                </a>
+                {{-- excluir --}}
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#modalExcluir" data-identificacao="" data-url="">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </div>
+        </td>
+        <td>{{ $lancamento->vencimento->format('d/m/Y') }}</td>
+        <td>{{ $lancamento->tipo->tipo }}</td>
+        <td>{{ $lancamento->valor }}</td>
+        <td>{{ $lancamento->centroCusto->centro_custo }}</td>
+        <td>{{ $lancamento->descricao }}</td>
+        <td>{{ $lancamento->usuario->name }}</td>
+        <td>
+            {{ $lancamento->created_at->format('d/m/Y \a\s H:i') }}h
+        </td>
+    </tr>
+    @empty
+    <tr>
+        <td colspan="8">
+            Nenhum registro retornado
+        </td>
+    </tr>
+    @endforelse
+</tbody>
+</table>
+</div>
+
+
 
 {{-- Modal Excluir --}}
 @include('layouts.partials.modalExcluir')
