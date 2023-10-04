@@ -26,6 +26,7 @@ class Adocoes extends Model
         'id_cliente',
         'id_pet',
         'id_Status',
+        'adocao',
         'dt_inicio',
         'dt_inicio_pa',
         'dt_devolucao',

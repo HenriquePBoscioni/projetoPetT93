@@ -13,8 +13,8 @@ class HistoricoClientesController extends Controller
     public function index()
     {
 
-        $historico_clientesIndex = Historico_clientes::ordeBy( 'id_historico')->paginate();
-        return view('historicoCliente.index')->with(compact('HistoricoClientes'));
+        $historico_clientes = Historico_clientes::ordeBy( 'id_historico')->paginate();
+        return view('historicoCliente.index')->with(compact('historico_clientes'));
 
 
     }
@@ -24,8 +24,8 @@ class HistoricoClientesController extends Controller
      */
     public function create()
     {
-        $historico_clientes = null;
-        return view('historicoAdocoes.index')->with(compact('HistoricoClientes_create'));
+        $historico_cliente = null;
+        return view('historicoCliente.index')->with(compact('historico_cliente'));
     }
 
     /**
@@ -43,7 +43,7 @@ class HistoricoClientesController extends Controller
      */
     public function show(int $id)
     {
-        $historico_clientes = Historico_clientes::find($id);
+        $historico_cliente = Historico_clientes::find($id);
     }
 
     /**
@@ -51,8 +51,8 @@ class HistoricoClientesController extends Controller
      */
     public function edit(int $id)
     {
-        $historico_clientes = Historico_clientes::find($id);
-        return view('historicoAdocoes.form')->with(compact('HistoricoClientes'));
+        $historico_cliente = Historico_clientes::find($id);
+        return view('historicoAdocoes.form')->with(compact('historico_cliente'));
     }
 
     /**
@@ -60,8 +60,8 @@ class HistoricoClientesController extends Controller
      */
     public function update(Request $request, int $id)
     {
-        $historico_clientes = Historico_clientes::find($id);
-        $historico_clientes->update($request->all());
+        $historico_cliente = Historico_clientes::find($id);
+        $historico_cliente->update($request->all());
         return redirect()
             ->route('historicoAdocoes.index')
             ->with('atualizado', 'Atualizado com sucesso!');
