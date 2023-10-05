@@ -14,7 +14,7 @@ class HistoricoAdocoesController extends Controller
      */
     public function index()
     {
-        $historico_adocoes = Historico_adocoes::ordeBy('id_HistoricoAdocacao')->paginate(2);
+        $historico_adocoes = Historico_adocoes::ordeBy('historico')->paginate(2);
         return view('historicoAdocoes.index')->with(compact('historico_adocoes'));
     }
 

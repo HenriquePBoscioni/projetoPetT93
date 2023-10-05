@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('clientes', function (Blueprint $table) {
             $table->increments('id_cliente');
             $table->integer('id_sexo');
-            $table->string('nome', 45);
+            $table->string('cliente', 45);
             $table->date('nascimento');
             $table->decimal('renda', 10,2);
             $table->timestamps();
