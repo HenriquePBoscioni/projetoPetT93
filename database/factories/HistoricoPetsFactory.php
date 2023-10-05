@@ -17,7 +17,6 @@ class HistoricoPetsFactory extends Factory
     public function definition(): array
     {
         return [
-            'id_historicoPet' => fake()->numberBetween(1,10),
             'id_pet' => fake()->numberBetween(1,10),
             'HistoricoPet' => fake()->text(),
             'personalidade' => fake()->text(),

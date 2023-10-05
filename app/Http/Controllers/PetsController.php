@@ -12,7 +12,7 @@ class PetsController extends Controller
      */
     public function index()
     {
-        $pets = Pets::orderBy('id_pet')->paginate(10);
+        $pets = Pets::orderBy('pet')->paginate(10);
         return view('pets.index')->with(compact('pets'));//
     }
 
@@ -22,7 +22,7 @@ class PetsController extends Controller
     public function create()
     {
         $pet = null;
-        return view('pets.index')->with(compact('pet'));
+        return view('pets.form')->with(compact('pet'));
     }
 
     /**

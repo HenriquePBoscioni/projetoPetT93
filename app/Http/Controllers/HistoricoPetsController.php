@@ -12,7 +12,7 @@ class HistoricoPetsController extends Controller
      */
     public function index()
     {
-        $historicoPets = HistoricoPets::orderBy('id_historicoPet');
+        $historicoPets = HistoricoPets::orderBy('HistoricoPet');
         return view('historicoPet.index')->with(compact('historicoPets'));//
     }
 

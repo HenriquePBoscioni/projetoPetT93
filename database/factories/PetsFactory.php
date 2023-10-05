@@ -17,10 +17,10 @@ class PetsFactory extends Factory
     public function definition(): array
     {
         return [
-            'id_pet' => fake()->numberBetween(1,4),
+            'pet' => fake()->name(),
             'nome' => fake()->name(),
-            'idade' => fake()->numberBetween(1,15),
-            'descrição' => fake()->text()
+            'idade' => fake()->numberBetween(1,50),
+            'descricao' => fake()->text()
         ];
     }
 }

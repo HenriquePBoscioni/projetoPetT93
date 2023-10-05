@@ -18,9 +18,8 @@ class ClientesFactory extends Factory
     public function definition(): array
     {
         return [
-            'id_cliente' => fake()->numberBetween(1,10),
             'id_sexo' => fake()->numberBetween(1,3),
-            'nome' => fake()->name(),
+            'cliente' => fake()->name(),
             'nascimento' => fake()->dateTimeBetween('-90 years','-20 years'),
             'renda' => fake()->numberBetween(1,99999)
         ];

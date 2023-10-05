@@ -12,8 +12,8 @@ class ContatosController extends Controller
      */
     public function index()
     {
-        $contatos = Contatos::orderby('id_contato')->paginate(10);
-        return view('contatos.index')->with(compact('contato'));
+        $contatos = Contatos::orderby('contato')->paginate(10);
+        return view('contatos.index')->with(compact('contatos'));
     }
 
     /**
