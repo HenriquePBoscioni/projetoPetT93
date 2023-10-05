@@ -98,7 +98,7 @@
                 <th>Status</th>
                 <th>Historico Adoção</th>
                 <th>Data inicial</th>
-                <th>Data inicial</th>
+                <th>Data final</th>
             </tr>
         </thead>
     </table>
