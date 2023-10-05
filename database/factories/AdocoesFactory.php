@@ -17,7 +17,7 @@ class AdocoesFactory extends Factory
     public function definition(): array
     {
         return [
-            'id_adocoes' => fake()->numberBetween(1,50),
+
             'id_cliente ' => fake()->numberBetween(1,50),
             'id_pet' => fake()->numberBetween(1,20),
             'id_Status'=> fake()->numberBetween(1,3),
