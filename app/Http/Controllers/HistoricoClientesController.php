@@ -13,7 +13,7 @@ class HistoricoClientesController extends Controller
     public function index()
     {
 
-        $historico_clientes = Historico_clientes::ordeBy( 'id_historico')->paginate();
+        $historico_clientes = Historico_clientes::ordeBy( 'historico')->paginate();
         return view('historicoCliente.index')->with(compact('historico_clientes'));
 
 

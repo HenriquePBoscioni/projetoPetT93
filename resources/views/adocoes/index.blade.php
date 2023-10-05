@@ -95,7 +95,7 @@
     </table>
 </div>
 <tbody class="table-group-divider">
-    @forelse ($pets as $pet )
+    @forelse ($adocoes   as $adocao )
     <tr>
         <td scope="row" class="col-2">
             <div class="flex-column">
@@ -118,16 +118,6 @@
                     <i class="bi bi-trash"></i>
                 </button>
             </div>
-        </td>
-        <td>{{ $lancamento->vencimento->format('d/m/Y') }}</td>
-        <td>{{ $lancamento->tipo->tipo }}</td>
-        <td>{{ $lancamento->valor }}</td>
-        <td>{{ $lancamento->centroCusto->centro_custo }}</td>
-        <td>{{ $lancamento->descricao }}</td>
-        <td>{{ $lancamento->usuario->name }}</td>
-        <td>
-            {{ $lancamento->created_at->format('d/m/Y \a\s H:i') }}h
-        </td>
     </tr>
     @empty
     <tr>
