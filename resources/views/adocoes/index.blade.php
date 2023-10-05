@@ -129,9 +129,6 @@
 </tbody>
 </table>
 </div>
-
-
-
 {{-- Modal Excluir --}}
 @include('layouts.partials.modalExcluir')
 {{-- /Modal Excluir --}}
