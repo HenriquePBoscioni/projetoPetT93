@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>teste</title>
-</head>
-</html>
 @extends('layouts.base')
 @section('content')
 <h1>
@@ -80,7 +71,7 @@
 
         @if(request()->get('search') !='')
         <a class="btn btn-primary col-md-1"
-            href="{{ route('adocoes.index') }}">
+            href="{{ route('lancamento.index') }}">
           Limpar
         </a>
         @endif
@@ -98,16 +89,46 @@
                 <th>Status</th>
                 <th>Historico Adoção</th>
                 <th>Data inicial</th>
-                <th>Data final</th>
+                <th>Data inicial</th>
             </tr>
         </thead>
     </table>
 </div>
+<tbody class="table-group-divider">
+    @forelse ($adocoes   as $adocao )
+    <tr>
+        <td scope="row" class="col-2">
+            <div class="flex-column">
+                {{-- ver anexo --}}
+                {{-- {{ Storage::url('/anexos/'.$lancamento->anexo)}} --}}
+                @if ($pet->anexo)
+                <a class="btn btn-success" href="{{ Storage::url($pet->anexo)}}"
+                    target="_blank">
+                    <i class="bi bi-paperclip"></i>
+                </a>
+                @endif
+
+                {{-- editar --}}
+                <a class="btn btn-dark" href="#">
+                    <i class="bi bi-pencil-square"></i>
+                </a>
+                {{-- excluir --}}
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#modalExcluir" data-identificacao="" data-url="">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </div>
+    </tr>
+    @empty
+    <tr>
+        <td colspan="8">
+            Nenhum registro retornado
+        </td>
+    </tr>
+    @endforelse
+</tbody>
 </table>
 </div>
-
-
-
 {{-- Modal Excluir --}}
 @include('layouts.partials.modalExcluir')
 {{-- /Modal Excluir --}}
