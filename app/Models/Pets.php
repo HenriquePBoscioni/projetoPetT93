@@ -23,7 +23,7 @@ class Pets extends Model
         'id_pet',
         'pet',
         'nome',
-        'nascimento',
+        'idade',
         'descricao'
     ];
 
