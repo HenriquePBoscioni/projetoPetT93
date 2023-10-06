@@ -103,42 +103,6 @@
         </thead>
     </table>
 </div>
-<<<<<<< HEAD
-=======
-<tbody class="table-group-divider">
-    @forelse ($adocoes   as $adocao )
-    <tr>
-        <td scope="row" class="col-2">
-            <div class="flex-column">
-                {{-- ver anexo --}}
-                {{-- {{ Storage::url('/anexos/'.$lancamento->anexo)}} --}}
-                @if ($pet->anexo)
-                <a class="btn btn-success" href="{{ Storage::url($pet->anexo)}}"
-                    target="_blank">
-                    <i class="bi bi-paperclip"></i>
-                </a>
-                @endif
-
-                {{-- editar --}}
-                <a class="btn btn-dark" href="#">
-                    <i class="bi bi-pencil-square"></i>
-                </a>
-                {{-- excluir --}}
-                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                    data-bs-target="#modalExcluir" data-identificacao="" data-url="">
-                    <i class="bi bi-trash"></i>
-                </button>
-            </div>
-    </tr>
-    @empty
-    <tr>
-        <td colspan="8">
-            Nenhum registro retornado
-        </td>
-    </tr>
-    @endforelse
-</tbody>
->>>>>>> Lucas
 </table>
 </div>
 {{-- Modal Excluir --}}
