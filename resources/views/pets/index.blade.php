@@ -83,7 +83,7 @@
             <tr>
                 <th>#</th>
                 <th>Pet</th>
-                <th>Data Nasc.</th>
+                <th>Idade</th>
                 <th>Raça</th>
                 {{-- <th>Centro de Custo</th>
                 <th>Descrição</th>
@@ -115,14 +115,13 @@
                             <i class="bi bi-trash"></i>
                         </button>
                     </div>
-                {{ {{-- </td> --}}
-                <td>{{ $pets->data->$raca->format('d/m/Y') }}</td>
-                // <td>{{ $pets->tipo->tipo }}</td>
-                // <td>{{ $pets->valor }}</td>
-                // <td>{{ $pets->centroCusto->centro_custo }}</td>
-                // <td>{{ $pets->descricao }}</td>
-                // <td>{{ $pets->usuario->name }}</td>
-                <td>
+                </td>
+                {{-- <td>{{ $pets->data->$raca->format('d/m/Y') }}</td> --}}
+                 <td>{{ $pets->nome }}</td>
+                 <td>{{ $pets->idade }}</td>
+                 <td>{{ $pets->Racas->raca }}</td>
+                {{-- // <td>{{ $pets->usuario->name }}</td> --}}
+                {{-- <td>
                     {{ $pets->created_at->format('d/m/Y \a\s H:i') }}h
                 </td> --}}
             </tr>
