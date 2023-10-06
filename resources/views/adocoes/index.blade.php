@@ -12,6 +12,9 @@
 {{-- alerts --}}
 @include('layouts.partials.alerts')
 {{-- /alerts --}}
+{{-- paginação --}}
+<div>{!! $adocoes->links() !!} </div>
+{{-- /paginação --}}
 {{-- pesquisa --}}
 <form action="{{ route('adocoes.index') }}" method="get">
 
