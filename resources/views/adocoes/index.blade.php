@@ -101,12 +101,13 @@
             <div class="flex-column">
                 {{-- ver anexo --}}
                 {{-- {{ Storage::url('/anexos/'.$lancamento->anexo)}} --}}
-                @if ($pet->anexo)
+
+                {{-- @if ($pet->anexo)
                 <a class="btn btn-success" href="{{ Storage::url($pet->anexo)}}"
                     target="_blank">
                     <i class="bi bi-paperclip"></i>
                 </a>
-                @endif
+                @endif --}}
 
                 {{-- editar --}}
                 <a class="btn btn-dark" href="#">
