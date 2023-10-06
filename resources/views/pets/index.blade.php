@@ -115,13 +115,13 @@
                             <i class="bi bi-trash"></i>
                         </button>
                     </div>
-                {{-- </td>
-                <td>{{ $pets->vencimento->format('d/m/Y') }}</td>
-                <td>{{ $pets->tipo->tipo }}</td>
-                <td>{{ $pets->valor }}</td>
-                <td>{{ $pets->centroCusto->centro_custo }}</td>
-                <td>{{ $pets->descricao }}</td>
-                <td>{{ $pets->usuario->name }}</td>
+                {{ {{-- </td> --}}
+                <td>{{ $pets->data->$raca->format('d/m/Y') }}</td>
+                // <td>{{ $pets->tipo->tipo }}</td>
+                // <td>{{ $pets->valor }}</td>
+                // <td>{{ $pets->centroCusto->centro_custo }}</td>
+                // <td>{{ $pets->descricao }}</td>
+                // <td>{{ $pets->usuario->name }}</td>
                 <td>
                     {{ $pets->created_at->format('d/m/Y \a\s H:i') }}h
                 </td> --}}

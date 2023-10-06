@@ -92,11 +92,6 @@
         </thead>
     </table>
 </div>
-<<<<<<< HEAD
-=======
-</table>
-</div>
->>>>>>> master
 {{-- Modal Excluir --}}
 @include('layouts.partials.modalExcluir')
 {{-- /Modal Excluir --}}
