@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('historico_adocoes', function (Blueprint $table) {
+        Schema::create('HistoricoAdocao', function (Blueprint $table) {
             $table->increments('id_historico_adocao');
             $table->integer('id_adocao');
-            $table->integer('historico');
+            $table->text('historico');
             $table->dateTime('dt_adocao');
             $table->dateTime('dt_devolucao');
             $table->timestamps();

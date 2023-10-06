@@ -18,10 +18,10 @@ class HistoricoPetsFactory extends Factory
     {
         return [
             'id_pet' => fake()->numberBetween(1,10),
-            'HistoricoPet' => fake()->text(),
+            'historicoPet' => fake()->text(),
             'personalidade' => fake()->text(),
+            'dt_adocao' => fake()->dateTimeBetween(now(),'+30 week'),
             'dt_devolucao' => fake()->dateTimeBetween('-1 year',now()),
-            'HistoricoPetscol'=> fake()->text()
         ];
     }
 }

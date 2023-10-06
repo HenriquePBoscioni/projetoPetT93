@@ -19,7 +19,9 @@ class ContatosFactory extends Factory
         return [
             'id_cliente' => fake()->numberBetween(1,10),
             'email' => fake()->email(),
-            'descrição' => fake()->text()
+            'telefone' => fake()->numberBetween(1,50),
+            'endereco' => fake()->text(),
+            'complemento' => fake()->text()
         ];
     }
 }
