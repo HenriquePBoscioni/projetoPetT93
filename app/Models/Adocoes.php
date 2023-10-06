@@ -23,6 +23,7 @@ class Adocoes extends Model
         'dt_devolucao',
     ];
     protected $fillable = [
+        'id_adocao',
         'id_cliente',
         'id_pet',
         'id_Status',

@@ -15,7 +15,9 @@ return new class extends Migration
             $table->increments('id_contato');
             $table->integer('id_cliente');
             $table->string('email',45);
-            $table->string('telefone',45);
+            $table->integer('telefone');
+            $table->text('endereco');
+            $table->text('complemento');
             $table->timestamps();
         });
     }

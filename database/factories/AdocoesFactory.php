@@ -18,9 +18,10 @@ class AdocoesFactory extends Factory
     {
         return [
 
-            'id_cliente ' => fake()->numberBetween(1,50),
+            'id_cliente' => fake()->numberBetween(1,50),
             'id_pet' => fake()->numberBetween(1,20),
             'id_Status'=> fake()->numberBetween(1,3),
+            'adocao'=> fake()->text(),
             'dt_inicio'=>  fake()->dateTimeBetween(now(),'+30 week'),
             'dt_inicio_pa'=>  fake()->dateTimeBetween(now(),'+30 week'),
             'dt_devolucao'=> fake()->dateTimeBetween(now(),'+30 week'),

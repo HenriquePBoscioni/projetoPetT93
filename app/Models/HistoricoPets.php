@@ -24,8 +24,8 @@ class HistoricoPets extends Model
     protected $fillable = [
         'id_historicoPet',
         'id_pet',
-        'HistoricoPet',
-        'Personalidade',
+        'historicoPet',
+        'personalidade',
         'dt_adocao',
         'dt_devolucao'
     ];

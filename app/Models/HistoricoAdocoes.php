@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 
-class Historico_adocoes extends Model
+class HistoricoAdocoes extends Model
 {
 
     use HasFactory, SoftDeletes;

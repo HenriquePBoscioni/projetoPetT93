@@ -16,7 +16,8 @@ return new class extends Migration
             $table->integer('id_pet');
             $table->text('historicoPet');
             $table->text('personalidade');
-            $table->dateTime('dtDevolucao');
+            $table->dateTime('dt_adocao');
+            $table->dateTime('dt_devolucao');
             $table->timestamps();
         });
 
