@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>teste</title>
-</head>
-</html>
 @extends('layouts.base')
 @section('content')
 <h1>
@@ -21,11 +12,6 @@
 {{-- alerts --}}
 @include('layouts.partials.alerts')
 {{-- /alerts --}}
-{{-- paginação --}}
-{!! $adocoes->appends([
-                            'search'=>request()->get('search','')
-                        ])->links() !!}
-{{-- /paginação --}}
 {{-- pesquisa --}}
 <form action="{{ route('adocoes.index') }}" method="get">
 
