@@ -23,7 +23,9 @@ class Contatos extends Model
         'id_contato',
         'id_cliente',
         'email',
-        'telefone'
+        'telefone',
+        'endereco',
+        'complemento'
     ];
 
     public function Clientes():BelongsTo{

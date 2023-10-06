@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('pet',45);
             $table->string('nome',45);
             $table->integer('idade');
-            $table->string('descricao',150);
+            $table->text('descricao')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
