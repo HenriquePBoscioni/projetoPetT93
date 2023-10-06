@@ -21,7 +21,11 @@ class AdocoesController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         $adocoes = Adocoes::orderBy('id_adocao')->paginate(10);
+=======
+        $adocoes = Adocoes::orderBy('id_adocao')->paginate(1);
+>>>>>>> master
         return view('adocoes.index')->with(compact('adocoes'));//
         //teste
     }

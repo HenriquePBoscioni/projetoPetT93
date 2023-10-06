@@ -32,9 +32,10 @@ class HistoricoAdocoes extends Model
     protected $fillable = [
         'id_HistoricoAdocacao',
         'id_adocao',
+        'historico',
         'dt_adocao',
         'dt_devolucao',
-        'historico'
+
     ];
 
 
