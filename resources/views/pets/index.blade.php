@@ -44,8 +44,8 @@
                 <option value="">Roedores</option>
 
                 @foreach ($pets as $pet )
-                <option value="{{$adocao->id_pets}}">
-                    {{ $pets->pets}}
+                <option value="{{$pet->id_pets}}">
+                    {{ $pet->pets}}
                 </option>
                 @endforeach
             </select>
