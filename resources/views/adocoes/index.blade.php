@@ -13,9 +13,7 @@
 @include('layouts.partials.alerts')
 {{-- /alerts --}}
 {{-- paginação --}}
-{!! $adocoes->appends([
-                            'search'=>request()->get('search','')
-                        ])->links() !!}
+<div>{!! $adocoes->links() !!} </div>
 {{-- /paginação --}}
 {{-- pesquisa --}}
 <form action="{{ route('adocoes.index') }}" method="get">
@@ -94,6 +92,11 @@
         </thead>
     </table>
 </div>
+<<<<<<< HEAD
+=======
+</table>
+</div>
+>>>>>>> master
 {{-- Modal Excluir --}}
 @include('layouts.partials.modalExcluir')
 {{-- /Modal Excluir --}}
