@@ -41,7 +41,7 @@ class Adocoes extends Model
     }
 
     public function HistoricoAdocoes():BelongsTo{
-        return $this->belongsTo(HistoricoPets::class, 'id_adocao', 'id_adocao');
+        return $this->belongsTo(HistoricoAdocoes::class, 'id_adocao', 'id_adocao');
     }
 
     public function Clientes():BelongsTo{
