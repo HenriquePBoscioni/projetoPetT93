@@ -15,6 +15,8 @@ return new class extends Migration
             $table->increments('id_sexo');
             $table->string('sexo',45);
             $table->timestamps();
+            $table->softDeletes();
+
         });
 
         \App\Models\Sexos::create([
