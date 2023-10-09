@@ -48,7 +48,7 @@ class Pets extends Model
 
     public function Racas(): BelongsTo
     {
-        return $this->belongsTo(Portes::class, 'id_pet', 'id_pet');
+        return $this->belongsTo(Racas::class, 'id_pet', 'id_pet');
     }
 
     public function HistoricoPets(): BelongsTo
