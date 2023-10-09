@@ -107,8 +107,8 @@
                                     <i class="bi bi-pencil-square"></i>
                                 </a>
                                 {{-- excluir --}}
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalExcluir"
-                            data-identificacao="" data-url="">
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                    data-bs-target="#modalExcluir" data-identificacao="" data-url="">
                                     <i class="bi bi-trash"></i>
                                 </button>
                             </div>
@@ -117,7 +117,7 @@
                         <td>{{ $adocao->pets->pet }}</td>
                         <td>{{ $adocao->clientes->cliente }}</td>
                         <td>{{ $adocao->status->status }}</td>
-                <td>{!! $adocao->HistoricoAdocoes()->count() !!}</td>
+                        <td>{!! $adocao->HistoricoAdocoes()->count() !!}</td>
                         <td>
                             {{ $adocao->created_at->format('d/m/Y \a\s H:i') }}h
                         </td>
