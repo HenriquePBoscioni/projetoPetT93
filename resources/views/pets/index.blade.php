@@ -92,14 +92,14 @@
             </tr>
         </thead>
         <tbody class="table-group-divider">
-            @forelse ($pets as $pets )
+            @forelse ($pets as $pet )
             <tr>
                 <td scope="row" class="col-2">
                     <div class="flex-column">
                         {{-- ver anexo --}}
                         {{-- {{ Storage::url('/anexos/'.$lancamento->anexo)}} --}}
-                        @if ($pets->anexo)
-                        <a class="btn btn-success" href="{{ Storage::url('/anexos/'.$pets->anexo)}}"
+                        @if ($pet->anexo)
+                        <a class="btn btn-success" href="{{ Storage::url('/anexos/'.$pet->anexo)}}"
                             target="_blank">
                             <i class="bi bi-paperclip"></i>
                         </a>
@@ -117,9 +117,10 @@
                     </div>
                 </td>
                 {{-- <td>{{ $pets->data->$raca->format('d/m/Y') }}</td> --}}
-                 <td>{{ $pets->nome }}</td>
-                 <td>{{ $pets->idade }}</td>
-                 <td>{{ $pets->Racas->raca }}</td>
+                 <td>{{ $pet->nome }}</td>
+                 <td>{{ $pet->idade }}</td>
+                 <td>{!! $pet->racas->raca !!}</td>
+
                 {{-- // <td>{{ $pets->usuario->name }}</td> --}}
                 {{-- <td>
                     {{ $pets->created_at->format('d/m/Y \a\s H:i') }}h

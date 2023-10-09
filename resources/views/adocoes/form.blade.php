@@ -16,8 +16,6 @@
 
 
 
-<<<<<<< HEAD
-=======
         <div class="col-md-6">
             <label for="id_cliente" class="form-label">Clientes*</label>
             <select id="id_cliente" class="form-select" required>
@@ -115,4 +113,3 @@
 @section('scripts')
     @parent
 @endsection
->>>>>>> master
