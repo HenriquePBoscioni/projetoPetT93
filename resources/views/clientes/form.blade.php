@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @extends('layouts.base')
 @section('content')
 <h1>
@@ -9,3 +10,5 @@
 
     @endif
 </h1>
+=======
+>>>>>>> master
