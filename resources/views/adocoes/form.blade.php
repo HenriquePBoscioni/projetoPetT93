@@ -58,7 +58,7 @@
             </select>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-4">
             <label for="id_cliente" class="form-label">Status*</label>
             <select id="id_cliente" class="form-select" required>
                 <option>Escolha...</option>
@@ -92,13 +92,6 @@
             </label>
             <input class="form-control" type="date" name="dt_inicial" id="dt_inicial">
         </div>
-
-        <div class="col-md-4">
-            <label class="form-label" for="valor">Valor*</label>
-            <input class="form-control" type="number" id="valor" name="valor"
-                value="{{ $adocao ? $adocao->valor : old('valor') }}" required>
-        </div>
-
 
         <div class="col-md-12">
             <label class="form-label" for="descricao">Observaçoes*</label>
