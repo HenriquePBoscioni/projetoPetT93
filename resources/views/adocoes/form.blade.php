@@ -55,7 +55,27 @@
                 {{ $pet->pet }}
             </option>
             @endforeach
+            </select>
+        </div>
 
+        <div class="col-md-6">
+            <label for="id_cliente" class="form-label">Status*</label>
+            <select id="id_cliente" class="form-select" required>
+                <option>Escolha...</option>
+                @foreach ($status::orderBy('status')->get() as $status)
+            <option value="{{ $status->id_status}}"
+            @selected(
+                (
+                    $adocao &&
+                    $adocao->id_status == $status->id_status
+                )
+                ||
+                old('id_status') == $status->id_status
+                )
+                >
+                {{ $status->status }}
+            </option>
+            @endforeach
             </select>
         </div>
 
