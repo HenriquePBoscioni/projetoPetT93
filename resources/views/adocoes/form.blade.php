@@ -34,7 +34,7 @@
             <select id="id_cliente" class="form-select" required>
                 <option>Escolha...</option>
 
-                @foreach ($cliente::orderBy('cliente')->get() as $id_cliente)
+                {{-- @foreach ($cliente::orderBy('cliente')->get() as $id_cliente)
             <option value="{{ $cliente->id_cliente}}"
             @selected(
                 (
@@ -49,7 +49,7 @@
             </option>
             @endforeach
             </select>
-        </div>
+        </div> --}}
 
         <div class="col-md-4">
             <label class="form-label" for="dt_inicial">
@@ -70,20 +70,20 @@
         <label for="id_pet" class="form-label">Pet*</label> --}}
         <select id="id_pet" class="form-select" required>
             <option value="">Escolha...</option>
-            @foreach ($pet::orderBy('pet')->get() as $centro)
-            <option value="{{$centro->id_pet}}"
-                        @selected(
+            {{-- @foreach ($pet::orderBy('pet')->get() as $centro) --}}
+            {{-- <option value="{{$centro->id_pet}}" --}}
+                        {{-- @selected(
                             (
                                 $adocao &&
                                 $adocao->id_pet == $centro->id_pet
                             )
                             ||
-                            old('id_pet') == $centro->id_pet
+                             old('id_pet') == $centro->id_pet
                         )
                     >
                         {{ $centro->pet}}
                     </option>
-                @endforeach
+                @endforeach --}}
         </select>
         </div>
 
