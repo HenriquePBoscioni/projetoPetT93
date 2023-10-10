@@ -12,13 +12,8 @@ class ClientesController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-        $clientes_index = Clientes::ordeBy('id_cliente');
-        return view('clientes.index')->with(compact('Clientes'));
-=======
         $clientes = Clientes::orderBy('id_cliente')->paginate();
         return view('clientes.index')->with(compact('clientes'));
->>>>>>> master
     }
 
     /**
@@ -27,7 +22,7 @@ class ClientesController extends Controller
     public function create()
     {
         $clientes = null;
-        return view('clientes.index')->with(compact('Clientes_create'));
+        return view('clientes.index')->with(compact('clientes'));
     }
 
     /**
