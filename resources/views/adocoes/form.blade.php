@@ -19,22 +19,6 @@
         <div class="col-md-6">
             <label for="id_cliente" class="form-label">Clientes*</label>
             <select id="id_cliente" class="form-select" required>
-<<<<<<< HEAD
-=======
-                <option>Clientes...</option>
-            </select>
-        </div>
-        <div class="col-md-6">
-            <label for="id_cliente" class="form-label">Pets*</label>
-            <select id="id_cliente" class="form-select" required>
-                <option>Pets...</option>
-            </select>
-        </div>
-
-        {{-- <div class="col-md-4">
-            <label for="id_cliente" class="form-label">Status*</label>
-            <select id="id_cliente" class="form-select" required>
->>>>>>> master
                 <option>Escolha...</option>
                 @foreach ($clientes::orderBy('cliente')->get() as $cliente)
             <option value="{{ $cliente->id_cliente}}"
@@ -51,18 +35,18 @@
             </option>
             @endforeach
             </select>
-        </div> --}}
+        </div>
 
         <div class="col-md-6">
             <label for="id_cliente" class="form-label">Pets*</label>
             <select id="id_cliente" class="form-select" required>
                 <option>Escolha...</option>
                 @foreach ($pets::orderBy('pet')->get() as $pet)
-            <option value="{{ $pet->id_cliente}}"
+            <option value="{{ $pet->id_pet}}"
             @selected(
                 (
                     $adocao &&
-                    $adocao->id_cpet == $pet->id_pet
+                    $adocao->id_pet == $pet->id_pet
                 )
                 ||
                 old('id_pet') == $pet->id_pet
@@ -71,6 +55,7 @@
                 {{ $pet->pet }}
             </option>
             @endforeach
+
             </select>
         </div>
 
@@ -86,28 +71,6 @@
                 Data da devolucao do pet*
             </label>
             <input class="form-control" type="date" name="dt_inicial" id="dt_inicial">
-        </div>
-
-
-        <div class="col-md-3">
-        <label for="id_pet" class="form-label">Pet*</label>
-        <select id="id_pet" class="form-select" required>
-            <option value="">Escolha...</option>
-            @foreach ($pet::orderBy('pet')->get() as $pet)
-            <option value="{{$pet->id_pet}}"
-                        @selected(
-                            (
-                                $adocao &&
-                                $adocao->id_pet == $pet->id_pet
-                            )
-                            ||
-                            old('id_pet') == $pet->id_pet
-                        )
-                    >
-                        {{ $pet->pet}}
-                    </option>
-                @endforeach
-        </select>
         </div>
 
         <div class="col-md-4">
