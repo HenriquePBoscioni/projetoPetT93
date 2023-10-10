@@ -10,7 +10,8 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link">
-                    Olá {{ Auth::user()->name }}
+
+                    Olá {{ Auth::user()->name}}
                     |
                     </a>
                 </li>

@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProfileController;
 
 use Illuminate\Support\Facades\Route;
@@ -37,6 +36,7 @@ use Database\Factories\HistoricoAdocoesFactory;
 */
 
 Route::get('/', function () {
+
     return redirect()->route('adocoes.index');
 })->middleware(['auth','verified'])->name('home');
 
