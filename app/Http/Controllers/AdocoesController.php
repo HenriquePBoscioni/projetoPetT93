@@ -19,12 +19,36 @@ class AdocoesController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $pet = $request->get('id_pet');
+        $cliente = $request->get('id_cliente');
+        $dt_inicial = $request->get('dt_inicio') ?? null;
+        $dt_final = $request->get('dt_devolucao') ?? null;
+
+        // $adocoes = Adocoes::where(function ($query) use ($pet, $cliente, $dt_inicial, $dt_final) {
+        //     if ($pet) {
+        //         $query->where('id_pet', 'like', "%$pet%");
+        //     }
+        //     if ($cliente) {
+        //         $query->where('id_cliente', 'like', "%$cliente%");
+        //     }
+        //     if ($dt_inicial) {
+        //         $query->where('id_inicio', '>=', "%$dt_inicial%");
+        //     }
+        //     if ($cliente) {
+        //         $query->where('id_devolucao', '<=', "%$dt_final%");
+        //     }
+        // })->orderBy('id_adocao')->paginate(10);
+        // return view('adocoes.index')->with(compact('adocoes'));
+
         $adocoes = Adocoes::orderBy('id_adocao')->paginate(10);
-        $adocoes = Adocoes::orderBy('id_adocao')->paginate(1);
+        // $adocoes = Adocoes::orderBy('id_adocao')->paginate(1);
         return view('adocoes.index')->with(compact('adocoes'));//
+
         //teste
+
+
     }
 
     /**

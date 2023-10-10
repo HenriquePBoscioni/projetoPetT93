@@ -65,7 +65,7 @@
             </div>
 
             @if (request()->get('search') != '')
-                <a class="btn btn-primary col-md-1" href="{{ route('lancamento.index') }}">
+                <a class="btn btn-primary col-md-1" href="{{ route('adocoes.index') }}">
                     Limpar
                 </a>
             @endif

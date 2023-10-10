@@ -33,7 +33,7 @@
             <label for="id_cliente" class="form-label">Status*</label>
             <select id="id_cliente" class="form-select" required>
                 <option>Escolha...</option>
-                {{-- @foreach ($clientes::orderBy('cliente')->get() as $cliente)
+                @foreach ($clientes::orderBy('cliente')->get() as $cliente)
             <option value="{{ $cliente->id_cliente}}"
             @selected(
                 (
@@ -46,7 +46,7 @@
                 >
                 {{ $cliente->cliente }}
             </option>
-            @endforeach --}}
+            @endforeach
             </select>
         </div>
 
@@ -65,12 +65,12 @@
         </div>
 
 
-        {{-- <div class="col-md-3"> --}}
-        {{-- <label for="id_pet" class="form-label">Pet*</label> --}}
-        {{-- <select id="id_pet" class="form-select" required> --}}
-        {{-- <option value="">Escolha...</option> --}}
-        {{-- @foreach ($pet::orderBy('pet')->get() as $centro)
-                    <option value="{{$centro->id_pet}}"
+        <div class="col-md-3">
+        <label for="id_pet" class="form-label">Pet*</label> --}}
+        <select id="id_pet" class="form-select" required>
+            <option value="">Escolha...</option>
+            @foreach ($pet::orderBy('pet')->get() as $centro)
+            <option value="{{$centro->id_pet}}"
                         @selected(
                             (
                                 $adocao &&
@@ -82,15 +82,15 @@
                     >
                         {{ $centro->pet}}
                     </option>
-                @endforeach --}}
-        {{-- </select> --}}
-        {{-- </div> --}}
+                @endforeach
+        </select>
+        </div>
 
-        {{-- <div class="col-md-4">
+        <div class="col-md-4">
             <label class="form-label" for="valor">Valor*</label>
             <input class="form-control" type="number" id="valor" name="valor"
                 value="{{ $adocao ? $adocao->valor : old('valor') }}" required>
-        </div> --}}
+        </div>
 
 
         <div class="col-md-12">
