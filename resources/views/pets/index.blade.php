@@ -5,7 +5,7 @@
     - Pets
     |
     <a class="btn btn-primary" href="{{ route('pets.create') }}">
-        Nova Cadastro De Pet
+        Cadastro De Pet
     </a>
 </h1>
 
@@ -34,7 +34,7 @@
             type="date" name="dt_inicial" id="dt_inicial">
         </div>
         <div class="col-md-3">
-            <label for="id_pet" class="form-label">Raça</label>
+            <label for="id_pet" class="form-label">Especie</label>
             <select id="id_pet" name="id_pet" class="form-select" >
                 <option value="">Escolha...</option>
                 <option value="">Cachorros</option>
@@ -65,7 +65,7 @@
         {{-- /data final --}}
 
 
-        <input class="btn btn-success col-md-2" type="submit" value="Pesquisar">
+        <input class="btn btn-success col-md-2"  href="{{ route('pets.index') }}" type="submit" value="Pesquisar">
 
         @if(request()->get('search') !='')
         <a class="btn btn-primary col-md-1"
