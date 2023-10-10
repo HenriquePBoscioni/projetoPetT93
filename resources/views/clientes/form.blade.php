@@ -1,7 +1,7 @@
 @extends('layouts.base')
 @section('content')
 <h1>
-    @if ($cliente)
+    @if ($clientes)
         Editando Clientes
         {{ $cliente->id_cliente }}
     @else
