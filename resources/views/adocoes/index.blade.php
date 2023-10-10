@@ -47,7 +47,7 @@
                 <input class="form-control" type="date" name="dt_final" id="dt_final">
             </div>
             {{-- /data final --}}
-            <div class="col-md-3">
+            {{-- <div class="col-md-3">
                 <label for="id_status" class="form-label">Status</label>
                 <select id="id_status" name="id_status" class="form-select">
                     <option value="">Escolha...</option>
@@ -57,7 +57,7 @@
                         </option>
                     @endforeach
                 </select>
-            </div>
+            </div> --}}
 
             <div>
                 <br>
