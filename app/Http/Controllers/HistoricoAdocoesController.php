@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Historico_adocoes;
 use App\Models\Historico_clientes;
+use App\Models\HistoricoAdocoes;
 use App\Models\HistoricoPets;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class HistoricoAdocoesController extends Controller
      */
     public function index()
     {
-        $historico_adocoes = Historico_adocoes::ordeBy('historico')->paginate(2);
+        $historico_adocoes = HistoricoAdocoes::ordeBy('historico')->paginate(2);
         return view('historicoAdocoes.index')->with(compact('historico_adocoes'));
     }
 
@@ -32,7 +33,7 @@ class HistoricoAdocoesController extends Controller
      */
     public function store(Request $request)
     {
-        Historico_adocoes::create($request->all());
+        HistoricoAdocoes::create($request->all());
 
         return redirect()->route('historicoAdocoes.index')->with('novo','Teste historicoAdocoes');
     }
@@ -42,15 +43,15 @@ class HistoricoAdocoesController extends Controller
      */
     public function show(int $id)
     {
-        $historico_adocao = Historico_adocoes::find($id);
+        $historico_adocao = HistoricoAdocoes::find($id);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Historico_adocoes $historico_adocoes, int $id)
+    public function edit(HistoricoAdocoes $historico_adocoes, int $id)
     {
-        $historico_adocao = Historico_adocoes::find($id);
+        $historico_adocao = HistoricoAdocoes::find($id);
         return view('historicoAdocoes.form')->with(compact('historico_adocao'));
 
     }
@@ -60,7 +61,7 @@ class HistoricoAdocoesController extends Controller
      */
     public function update(Request $request, int $id)
     {
-        $historico_adocao = Historico_adocoes::find($id);
+        $historico_adocao = HistoricoAdocoes::find($id);
         $historico_adocao->update($request->all());
         return redirect()
             ->route('historicoAdocoes.index')
@@ -72,7 +73,7 @@ class HistoricoAdocoesController extends Controller
      */
     public function destroy( int $id)
     {
-        Historico_adocoes::find($id)->delete();
+        HistoricoAdocoes::find($id)->delete();
         return redirect()
             ->back()
             ->with('excluido','Excluido com sucesso!');
