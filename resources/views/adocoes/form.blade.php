@@ -32,7 +32,8 @@
         <div class="col-md-4">
             <label for="id_cliente" class="form-label">Status*</label>
             <select id="id_cliente" class="form-select" required>
-                <option>Escolha...</option>
+                <option>Escolha...</option>;
+
                 @foreach ($clientes::orderBy('cliente')->get() as $cliente)
             <option value="{{ $cliente->id_cliente}}"
             @selected(
