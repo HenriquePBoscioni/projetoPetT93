@@ -20,37 +20,40 @@ class Pets extends Model
     ];
     protected $fillable =
     [
-        'id_pet',
-        'pet',
         'nome',
         'idade',
+        'pet',
+        'id_porte',
+        'id_cor',
+        'id_genero',
+        'id_raca',
         'descricao'
     ];
 
-    public function Portes(): BelongsTo
+    public function portes()
     {
-        return $this->belongsTo(Portes::class, 'id_pet', 'id_pet');
+       return $this->belongsTo(Portes::class, 'id_porte', 'id_porte');
     }
 
-    public function Cores(): BelongsTo
+    public function cores()
     {
-        return $this->belongsTo(Portes::class, 'id_pet', 'id_pet');
+        return $this->belongsTo(Cores::class, 'id_cor', 'id_cor');
     }
 
-    public function GenerosPets(): BelongsTo
+    public function generosPets()
     {
-        return $this->belongsTo(Portes::class, 'id_pet', 'id_pet');
+        return $this->belongsTo(GenerosPets::class, 'id_genero', 'id_genero');
     }
 
-    public function Racas(): BelongsTo
+    public function racas()
     {
-        return $this->belongsTo(Portes::class, 'id_pet', 'id_pet');
+        return $this->belongsTo(Racas::class, 'id_raca', 'id_raca');
     }
 
-    public function HistoricoPets(): BelongsTo
-    {
-        return $this->belongsTo(Portes::class, 'id_pet', 'id_pet');
-    }
+    // public function historicoPets()
+    // {
+    //     return $this->belongsTo(HistoricoPets::class, 'id_pet', 'id_pet');
+    // }
 
 
 }

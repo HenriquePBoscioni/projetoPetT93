@@ -12,8 +12,12 @@ class ClientesController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         $clientes = Clientes::orderBy('id_cliente')->paginate();
      //teste
+=======
+        $clientes = Clientes::all();
+>>>>>>> master
         return view('clientes.index')->with(compact('clientes'));
     }
 
@@ -23,7 +27,7 @@ class ClientesController extends Controller
     public function create()
     {
         $cliente = null;
-        return view('clientes.index')->with(compact('cliente'));
+        return view('clientes.form')->with(compact('cliente'));
     }
 
     /**
@@ -33,7 +37,7 @@ class ClientesController extends Controller
     {
         Clientes::create($request->all());
 
-        return redirect()->route('clientes.index')->with('novo','Teste Clientes');
+        return redirect()->route('clientes.index')->with('novo','Teste cliente');
     }
 
     /**

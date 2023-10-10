@@ -12,7 +12,12 @@ class PetsController extends Controller
      */
     public function index()
     {
-        $pets = Pets::orderBy('pet')->paginate(10);
+        $pets = Pets::with([
+            'portes',
+            'cores',
+            'generosPets',
+            'racas',
+        ])->orderBy('pet')->paginate(10);
         return view('pets.index')->with(compact('pets'));//
     }
 

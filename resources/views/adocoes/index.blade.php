@@ -47,17 +47,17 @@
                 <input class="form-control" type="date" name="dt_final" id="dt_final">
             </div>
             {{-- /data final --}}
-            <div class="col-md-3">
-                <label for="id_adocao" class="form-label">Status</label>
-                <select id="id_adocao" name="id_adocao" class="form-select">
+            {{-- <div class="col-md-3">
+                <label for="id_status" class="form-label">Status</label>
+                <select id="id_status" name="id_status" class="form-select">
                     <option value="">Escolha...</option>
-                    @foreach ($adocoes as $adocao)
-                        <option value="{{ $adocao->adocoes }}">
-                            {{ $adocao->adocoes }}
+                    @foreach ($status as $status)
+                        <option value="{{ $status->status }}">
+                            {{ $status->status }}
                         </option>
                     @endforeach
                 </select>
-            </div>
+            </div> --}}
 
             <div>
                 <br>
@@ -65,7 +65,7 @@
             </div>
 
             @if (request()->get('search') != '')
-                <a class="btn btn-primary col-md-1" href="{{ route('lancamento.index') }}">
+                <a class="btn btn-primary col-md-1" href="{{ route('adocoes.index') }}">
                     Limpar
                 </a>
             @endif
@@ -117,13 +117,7 @@
                         <td>{{ $adocao->pets->pet }}</td>
                         <td>{{ $adocao->clientes->cliente }}</td>
                         <td>{{ $adocao->status->status }}</td>
-                        <td>
-                            @if ($adocao->HistoricoAdocoes()->count() > 0)
-                                @foreach ($adocao->HistoricoAdocoes()->get() as $item)
-                                   - {!! substr($item->historico,20) !!}...<br>
-                                @endforeach
-                            @endif
-                        </td>
+                        <td>{!! $adocao->HistoricoAdocoes()->count() !!}</td>
                         <td>
                             {{ $adocao->created_at->format('d/m/Y \a\s H:i') }}h
                         </td>

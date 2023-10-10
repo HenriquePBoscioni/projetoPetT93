@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('cliente', 45);
             $table->date('nascimento');
             $table->decimal('renda', 10,2);
+            $table->text('descricao');
+            $table->text('sexo');
             $table->timestamps();
             $table->softDeletes();
         });
