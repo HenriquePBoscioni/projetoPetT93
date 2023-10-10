@@ -12,7 +12,7 @@ class ClientesController extends Controller
      */
     public function index()
     {
-        $clientes = Clientes::ordeBy('cliente');
+        $clientes = Clientes::ordeBy('id_cliente');
         return view('clientes.index')->with(compact('clientes'));
     }
 

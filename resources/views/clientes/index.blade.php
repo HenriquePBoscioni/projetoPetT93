@@ -16,7 +16,7 @@
     {!! $clientes->links() !!}
     {{-- /paginação --}}
     {{-- pesquisa --}}
-    <form action="{{ route('clientes.index') }}" method="get">
+    <form action="{{ route('cliente.index') }}" method="get">
 
         <div class="row ">
 
