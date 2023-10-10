@@ -82,6 +82,7 @@
         <thead>
             <tr>
                 <th>#</th>
+                <th>id</th>
                 <th>Pet</th>
                 <th>Idade</th>
                 <th>Raça</th>
@@ -117,6 +118,7 @@
                     </div>
                 </td>
                 {{-- <td>{{ $pets->data->$raca->format('d/m/Y') }}</td> --}}
+                <td>{{ $pet->id_pet }}</td>
                  <td>{{ $pet->nome }}</td>
                  <td>{{ $pet->idade }}</td>
                  <td>{!! $pet->racas->raca !!}</td>
