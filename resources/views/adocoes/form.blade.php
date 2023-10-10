@@ -69,7 +69,7 @@
         <label for="id_pet" class="form-label">Pet*</label>
         <select id="id_pet" class="form-select" required>
             <option value="">Escolha...</option>
-            {{-- @foreach ($pet::orderBy('pet')->get() as $pet)
+            @foreach ($pets::orderBy('pet')->get() as $pet)
             <option value="{{$pet->id_pet}}"
                         @selected(
                             (
@@ -82,7 +82,7 @@
                     >
                         {{ $pet->pet}}
                     </option>
-                @endforeach --}}
+                @endforeach
         </select>
         </div>
 
