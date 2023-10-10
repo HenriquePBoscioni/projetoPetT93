@@ -1,9 +1,9 @@
 @extends('layouts.base')
 @section('content')
 <h1>
-    @if ($centro)
+    @if ($cliente)
         Editando Clientes
-        {{ $centro->centro_custo }}
+        {{ $cliente->id_cliente }}
     @else
 
 
@@ -12,13 +12,13 @@
     <h1 class="mx-3 my-4">
         <i class="bi bi-wallet2"></i>
         @if ($cliente)
-            Editar adocao:
+            Editar cliente:
             Nº {{ $cliente->id_cliente }}
         @else
-            Novo adocao
+            Editar cliente
         @endif
     </h1>
-    <form action="{{ $cliente ? route('adocoes.update', ['id' => $cliente->id_cliente]) : route('clientes.store') }}"
+    <form action="{{ $cliente ? route('clientes.update', ['id' => $cliente->id_cliente]) : route('clientes.store') }}"
         method="post" enctype="multipart/form-data" class="row g-3">
         <div class="col-md-6">
             <label for="id_cliente" class="form-label">Clientes*</label>
@@ -26,36 +26,23 @@
                 <option>Clientes...</option>
             </select>
         </div>
-
-                {{-- @foreach ($clientes::orderBy('cliente')->get() as $cliente)
-            <option value="{{ $cliente->id_cliente}}"
-            @selected(
-                (
-                    $adocao &&
-                    $adocao->id_cliente == $cliente->id_cliente
-                )
-                ||
-                old('id_cliente') == $cliente->id_cliente
-                )
-                >
-                {{ $cliente->cliente }}
-            </option>
-            @endforeach --}}
-            </select>
-        </div>
-
         <div class="col-md-4">
             <label class="form-label" for="dt_inicial">
                 Data de Nascimento
             </label>
             <input class="form-control" type="date" name="dt_inicial" id="dt_inicial">
         </div>
-
+        <div class="col-md-6">
+            <label for="id_sexo" class="form-label">Sexo*</label>
+            <select id="id_sexo" class="form-select" required>
+                <option>Sexo...</option>
+            </select>
+        </div>
         <div class="col-md-4">
             <label class="form-label" for="dt_inicial">
               Renda
             </label>
-            <input class="form-control" type="date" name="dt_inicial" id="dt_inicial">
+            <input class="form-control " type="number" name="renda" id="renda">
         </div>
 
 
@@ -93,7 +80,7 @@
                 value="{{ $cliente ? $cliente->descricao : old('descricao') }}" required>
         </div> --}}
         <div class="col-md-12">
-            <label class="form-label" for="descricao">Historico do Cliente*</label>
+            <label class="form-label" for="descricao">Descrição*</label>
             <input class="form-control" type="text" id="descricao" name="descricao"
                 value="{{ $cliente ? $cliente->descricao : old('descricao') }}" required>
         </div>
