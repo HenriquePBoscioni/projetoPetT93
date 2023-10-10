@@ -63,6 +63,7 @@ class AdocoesController extends Controller
         $pets = Pets::class;
         $status = Status::class;
         return view('adocoes.form')->with(compact('adocao','clientes','pets','status'));
+
     }
 
     /**
