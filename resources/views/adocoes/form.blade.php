@@ -29,7 +29,7 @@
             </select>
         </div>
 
-        <div class="col-md-4">
+        {{-- <div class="col-md-4">
             <label for="id_cliente" class="form-label">Status*</label>
             <select id="id_cliente" class="form-select" required>
                 <option>Escolha...</option>
@@ -67,21 +67,31 @@
 
 
         <div class="col-md-3">
-        <label for="id_pet" class="form-label">Pet*</label> --}}
+        <label for="id_pet" class="form-label">Pet*</label>
         <select id="id_pet" class="form-select" required>
             <option value="">Escolha...</option>
+<<<<<<< HEAD
             {{-- @foreach ($pet::orderBy('pet')->get() as $centro) --}}
             {{-- <option value="{{$centro->id_pet}}" --}}
                         {{-- @selected(
+=======
+            @foreach ($pet::orderBy('pet')->get() as $pet)
+            <option value="{{$pet->id_pet}}"
+                        @selected(
+>>>>>>> master
                             (
                                 $adocao &&
-                                $adocao->id_pet == $centro->id_pet
+                                $adocao->id_pet == $pet->id_pet
                             )
                             ||
+<<<<<<< HEAD
                              old('id_pet') == $centro->id_pet
+=======
+                            old('id_pet') == $pet->id_pet
+>>>>>>> master
                         )
                     >
-                        {{ $centro->pet}}
+                        {{ $pet->pet}}
                     </option>
                 @endforeach --}}
         </select>

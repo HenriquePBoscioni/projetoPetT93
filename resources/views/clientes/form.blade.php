@@ -15,16 +15,14 @@
             Editar cliente:
             Nº {{ $cliente->id_cliente }}
         @else
-            Editar cliente
+            Novo Cliente
         @endif
     </h1>
     <form action="{{ $cliente ? route('clientes.update', ['id' => $cliente->id_cliente]) : route('clientes.store') }}"
         method="post" enctype="multipart/form-data" class="row g-3">
         <div class="col-md-6">
             <label for="id_cliente" class="form-label">Clientes*</label>
-            <select id="id_cliente" class="form-select" required>
-                <option>Clientes...</option>
-            </select>
+            <input type="text" id="id_cliente" class="form-control" >
         </div>
         <div class="col-md-4">
             <label class="form-label" for="dt_inicial">
@@ -79,11 +77,11 @@
             <input class="form-control" type="text" id="descricao" name="descricao"
                 value="{{ $cliente ? $cliente->descricao : old('descricao') }}" required>
         </div> --}}
-        <div class="col-md-12">
+        {{-- <div class="col-md-12">
             <label class="form-label" for="descricao">Descrição*</label>
             <input class="form-control" type="text" id="descricao" name="descricao"
                 value="{{ $cliente ? $cliente->descricao : old('descricao') }}" required>
-        </div>
+        </div> --}}
         <div class="col-md-2 offset-md-11">
             <input class="btn btn-primary" type="submit" value="{{ $cliente ? 'Atualizar' : 'Cadastrar' }}">
         </div>
