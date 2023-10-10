@@ -13,10 +13,10 @@
     @include('layouts.partials.alerts')
     {{-- /alerts --}}
     {{-- paginação --}}
-    {!! $clientes->links() !!}
+    {{-- {!! $clientes->links() !!} --}}
     {{-- /paginação --}}
     {{-- pesquisa --}}
-    <form action="{{ route('cliente.index') }}" method="get">
+    <form action="{{ route('clientes.index') }}" method="get">
     <form action="{{ route('clientes.index') }}" method="get">
 
         <div class="row ">
@@ -69,7 +69,7 @@
             </div> --}}
 
             @if (request()->get('search') != '')
-                <a class="btn btn-primary col-md-1" href="{{ route('lancamento.index') }}">
+                <a class="btn btn-primary col-md-1" href="{{ route('clientes.index') }}">
                     Limpar
                 </a>
             @endif

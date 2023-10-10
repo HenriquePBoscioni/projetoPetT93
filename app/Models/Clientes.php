@@ -27,7 +27,8 @@ class Clientes extends Model
         'cliente',
         'nascimento',
         'renda',
-        'descricao'
+        'descricao',
+        'sexo'
     ];
 
     protected $cast = [
