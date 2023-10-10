@@ -48,12 +48,12 @@
             </div>
             {{-- /data final --}}
             <div class="col-md-3">
-                <label for="id_adocao" class="form-label">Status</label>
-                <select id="id_adocao" name="id_adocao" class="form-select">
+                <label for="id_status" class="form-label">Status</label>
+                <select id="id_status" name="id_status" class="form-select">
                     <option value="">Escolha...</option>
-                    @foreach ($adocoes as $adocao)
-                        <option value="{{ $adocao->adocoes }}">
-                            {{ $adocao->adocoes }}
+                    @foreach ($status as $status)
+                        <option value="{{ $status->status }}">
+                            {{ $status->status }}
                         </option>
                     @endforeach
                 </select>
