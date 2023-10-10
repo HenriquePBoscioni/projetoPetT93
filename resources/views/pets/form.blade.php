@@ -6,7 +6,7 @@
 
             Nº {{ $pet->id_pet }}
         @else
-            Cadastro do Pet
+            Cadastro novo Pet
         @endif
     </h1>
     <form action="{{ $pet ? route('pets.update', ['id' => $pet->id_pet]) : route('pets.store') }}"
@@ -14,13 +14,10 @@
         @csrf
 
 
-
-
-
-
         <div class="col-md-6">
             <label for="id_pet" class="form-label">Pets*</label>
-            <select id="id_pet" class="form-select" required>
+            <select id="id_pet" id="id_pet" class="form-control"
+            value="{{ $pet ? $pet->pet : old('Pets') }}"required>
                 <option></option>
                 <option>Cachorro...</option>
                 <option>Gato</option>
@@ -32,7 +29,8 @@
 
          <div class="col-md-6">
             <label for="id_raca" class="form-label">Raças*</label>
-            <select id="id_raca" class="form-select" required>
+            <select id="id_raca"  id="id_raca" class="form-control"
+            value="{{ $pet ? $pet->raca : old('Racas') }}" required>
                 <option></option>
                 <option>Pastor-Alemao</option>
                 <option>Rottweiler</option>
@@ -59,14 +57,16 @@
         </div>
 
 
-        <div class="col-md-4">
-            <label for="id_status" class="form-label">Status*</label>
-            <select id="id_status" class="form-select" required>
-                <option>Escolha...</option>
-                <option>Em Andamento</option>
-                <option>Adotado</option>
-                <option>Devolucao</option>
-                <option>Disponivel</option>
+       <div class="col-md-4">
+           <label for="id_sexo" class="form-label">Sexo*</label>
+           <select name="id_sexo" id="id_sexo" class="form-select"
+           value="{{ $pet ? $pet->Sexo : old('Sexo') }}" required>
+               <option>Escolha...</option>
+               <option>Femea</option>
+               <option>Macho</option>
+
+
+
 
                 {{-- @foreach ($pet::orderBy('pet')->get() as $pet)
             <option value="{{ $pet->id_pet}}"
@@ -86,12 +86,15 @@
         </select>
         </div>
 
+
         <div class="col-md-4">
-            <label class="form-label" for="dt_inicial">
-                Data da adocao*
-            </label>
+            <label  for="dt_inicial" class="form-label">Data da adocao*</label>
             <input class="form-control" type="date" name="dt_inicial" id="dt_inicial">
+            {{-- value="{{ $pet ? $pet->Sexo : old('Sexo') }}" --}}
         </div>
+
+
+
 
         {{-- <div class="col-md-4">
             <label class="form-label" for="dt_inicial">
@@ -129,16 +132,35 @@
         </div> --}}
 
 
-        <div class="col-md-12">
+        <div class="col-md-4">
+            <label for="id_porte" class="form-label">Porte*</label>
+            <select name="id_porte" id="id_porte" class="form-select"
+            value="{{ $pet ? $pet->Sexo : old('Portes') }}" required>
+                <option>Escolha...</option>
+                <option>Pequeno</option>
+                <option>Médio</option>
+                <option>Grande</option>
+            </div>
+
+
+
+        {{-- <div class="col-md-12">
             <label class="form-label" for="descricao">Observaçoes*</label>
             <input class="form-control" type="text" id="descricao" name="descricao"
                 value="{{ $pet ? $pet->descricao : old('descricao') }}" required>
-        </div>
-        <div class="col-md-12">
+        </div> --}}
+
+
+
+
+
+        {{-- <div class="col-md-12">
             <label class="form-label" for="descricao">Historico do pet*</label>
             <input class="form-control" type="text" id="descricao" name="descricao"
-                value="{{ $pet ? $pet->descricao : old('descricao') }}" required>
+                value="{{ $pet ? $pet->descricao : old('descricao') }}" required> --}}
         </div>
+        <br>
+        <br>
         <div class="col-md-2 offset-md-11">
             <input class="btn btn-primary" type="submit" value="{{ $pet ? 'Atualizar' : 'Cadastrar' }}">
         </div>

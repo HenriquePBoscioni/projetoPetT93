@@ -117,7 +117,7 @@
                         </button>
                     </div>
                 </td>
-                {{-- <td>{{ $pets->data->$raca->format('d/m/Y') }}</td> --}}
+                {{-- <td>{{ $pets->data->format('d/m/Y') }}</td> --}}
                 <td>{{ $pet->id_pet }}</td>
                  <td>{{ $pet->nome }}</td>
                  <td>{{ $pet->idade }}</td>
