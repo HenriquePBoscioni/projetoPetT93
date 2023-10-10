@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @extends('layouts.base')
 @section('content')
     <h1 class="mx-3 my-4">
@@ -98,3 +99,5 @@
 @section('scripts')
     @parent
 @endsection
+=======
+>>>>>>> master
