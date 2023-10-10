@@ -12,6 +12,8 @@ class ClientesController extends Controller
      */
     public function index()
     {
+        $clientes = Clientes::orderBy('id_cliente')->paginate();
+     //teste
         $clientes = Clientes::all();
         return view('clientes.index')->with(compact('clientes'));
     }
@@ -21,8 +23,11 @@ class ClientesController extends Controller
      */
     public function create()
     {
-        $cliente = null;
-        return view('clientes.form')->with(compact('cliente'));
+        $adocao = null;
+        $clientes = Clientes::class;
+        $pets = Pets::class;
+        $status = Status::class;
+        return view('clientes.form')->with(compact('adocao','clientes','pets','status'));
     }
 
     /**
