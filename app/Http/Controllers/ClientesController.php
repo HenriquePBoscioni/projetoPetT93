@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Adocoes;
 use App\Models\Clientes;
+use App\Models\Contatos;
+use App\Models\Sexos;
 use Illuminate\Http\Request;
 
 class ClientesController extends Controller
@@ -23,11 +26,10 @@ class ClientesController extends Controller
      */
     public function create()
     {
-        $adocao = null;
-        $clientes = Clientes::class;
-        $pets = Pets::class;
-        $status = Status::class;
-        return view('clientes.form')->with(compact('adocao','clientes','pets','status'));
+        $clientes = null;
+        $contatos = Contatos::class;
+        $sexos = Sexos::class;
+        return view('clientes.form')->with(compact('clientes', 'contatos', 'sexos'));
     }
 
     /**
