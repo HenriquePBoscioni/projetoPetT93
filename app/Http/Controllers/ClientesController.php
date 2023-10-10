@@ -12,7 +12,7 @@ class ClientesController extends Controller
      */
     public function index()
     {
-        $clientes = Clientes::ordeBy('id_cliente');
+        $clientes = Clientes::ordeBy('id_cliente')->paginate(10);
         return view('clientes.index')->with(compact('clientes'));
     }
 
@@ -21,8 +21,8 @@ class ClientesController extends Controller
      */
     public function create()
     {
-        $clientes = null;
-        return view('clientes.index')->with(compact('clientes'));
+        $cliente = null;
+        return view('clientes.form')->with(compact('cliente'));
     }
 
     /**
@@ -40,7 +40,7 @@ class ClientesController extends Controller
      */
     public function show(int $id)
     {
-        $clientes = Clientes::find($id);
+        $cliente = Clientes::find($id);
     }
 
     /**
@@ -48,8 +48,8 @@ class ClientesController extends Controller
      */
     public function edit(Clientes $clientes, int $id)
     {
-        $clientes = Clientes::find($id);
-        return view('clientes.form')->with(compact('historicoAdocoes'));
+        $cliente = Clientes::find($id);
+        return view('clientes.form')->with(compact('cliente'));
     }
 
     /**
