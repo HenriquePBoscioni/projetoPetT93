@@ -121,7 +121,7 @@
                 <td>{{ $pet->id_pet }}</td>
                  <td>{{ $pet->nome }}</td>
                  <td>{{ $pet->idade }}</td>
-                 <td>{!! $pet->racas->raca !!}</td>
+                 <td>{{ $pet->racas->raca }}</td>
 
                 {{-- // <td>{{ $pets->usuario->name }}</td> --}}
                 {{-- <td>
