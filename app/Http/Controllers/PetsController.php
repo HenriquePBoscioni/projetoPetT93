@@ -27,6 +27,7 @@ class PetsController extends Controller
     public function create()
     {
         $pet = null;
+        // $Sexos = sexo::class;
         return view('pets.form')->with(compact('pet'));
     }
 
@@ -35,6 +36,7 @@ class PetsController extends Controller
      */
     public function store(Request $request)
     {
+    //    dd($request->all());
         Pets::create($request->all());
 
         return redirect()->route('pets.index')->with('novo','Teste adocao');
