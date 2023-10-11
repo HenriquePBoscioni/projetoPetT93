@@ -56,6 +56,22 @@
             </select>
         </div>
 
+        <div class="col-md-4">
+            <label for="id_porte" class="form-label">Porte*</label>
+            <select name="id_porte" id="id_porte" class="form-select"
+            value="{{ $pet ? $pet->Sexo : old('Portes') }}" required>
+                <option>Escolha...</option>
+                <option>Pequeno</option>
+                <option>Médio</option>
+                <option>Grande</option>
+
+            </select>
+            </div>
+
+
+
+
+
 
        <div class="col-md-4">
            <label for="id_sexo" class="form-label">Sexo*</label>
@@ -88,10 +104,19 @@
 
 
         <div class="col-md-4">
-            <label  for="dt_inicial" class="form-label">Data da adocao*</label>
+            <label  for="dt_inicial" class="form-label">Data de Nascimento*</label>
             <input class="form-control" type="date" name="dt_inicial" id="dt_inicial">
             {{-- value="{{ $pet ? $pet->Sexo : old('Sexo') }}" --}}
         </div>
+
+
+        <div class="col-md-4">
+            <label  for="dt_inicial" class="form-label">Data da adoção*</label>
+            <input class="form-control" type="date" name="dt_inicial" id="dt_inicial">
+            {{-- value="{{ $pet ? $pet->Sexo : old('Sexo') }}" --}}
+        </div>
+
+
 
 
 
@@ -132,7 +157,7 @@
         </div> --}}
 
 
-        <div class="col-md-4">
+        {{-- <div class="col-md-4">
             <label for="id_porte" class="form-label">Porte*</label>
             <select name="id_porte" id="id_porte" class="form-select"
             value="{{ $pet ? $pet->Sexo : old('Portes') }}" required>
@@ -141,14 +166,14 @@
                 <option>Médio</option>
                 <option>Grande</option>
             </div>
+ --}}
 
 
-
-        {{-- <div class="col-md-12">
-            <label class="form-label" for="descricao">Observaçoes*</label>
+        <div class="col-md-5">
+            <label class="form-label" for="descricao">Observaçoes</label>
             <input class="form-control" type="text" id="descricao" name="descricao"
                 value="{{ $pet ? $pet->descricao : old('descricao') }}" required>
-        </div> --}}
+        </div>
 
 
 
