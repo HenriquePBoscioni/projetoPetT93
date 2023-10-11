@@ -30,7 +30,7 @@ class Racas extends Model
     }
 
     public function Especies():BelongsTo{
-        return $this->belongsTo(Pets::class, 'id_raca', 'id_raca' );
+        return $this->belongsTo(Especies::class, 'id_raca', 'id_raca' );
     }
 
 }
