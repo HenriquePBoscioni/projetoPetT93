@@ -82,14 +82,10 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>id</th>
+                {{-- <th>id</th> --}}
                 <th>Pet</th>
                 <th>Idade</th>
                 <th>Raça</th>
-                {{-- <th>Centro de Custo</th>
-                <th>Descrição</th>
-                <th>Usuário</th>
-                <th>Data do lançamento</th> --}}
             </tr>
         </thead>
         <tbody class="table-group-divider">
@@ -118,15 +114,10 @@
                     </div>
                 </td>
                 {{-- <td>{{ $pets->data->format('d/m/Y') }}</td> --}}
-                <td>{{ $pet->id_pet }}</td>
-                 <td>{{ $pet->nome }}</td>
+                {{-- <td>{{ $pet->id_pet }}</td> --}}
+                 <td>{{ $pet->pet }}</td>
                  <td>{{ $pet->idade }}</td>
-                 <td>{!! $pet->racas->raca !!}</td>
-
-                {{-- // <td>{{ $pets->usuario->name }}</td> --}}
-                {{-- <td>
-                    {{ $pets->created_at->format('d/m/Y \a\s H:i') }}h
-                </td> --}}
+                 <td>{{ $pet->racas->raca }}</td>
             </tr>
             @empty
             <tr>

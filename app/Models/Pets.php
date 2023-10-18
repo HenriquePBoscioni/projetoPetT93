@@ -20,7 +20,7 @@ class Pets extends Model
     ];
     protected $fillable =
     [
-        'nome',
+        // 'nome',
         'idade',
         'pet',
         'id_porte',

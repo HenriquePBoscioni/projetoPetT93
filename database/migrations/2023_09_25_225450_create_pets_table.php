@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('pets', function (Blueprint $table) {
             $table->increments('id_pet');
             $table->string('pet',45);
-            $table->string('nome',45);
+            // $table->string('nome',45);
             $table->integer('idade');
+            $table->integer('id_raca')->default(1);
             $table->text('descricao')->nullable();
             $table->timestamps();
             $table->softDeletes();
