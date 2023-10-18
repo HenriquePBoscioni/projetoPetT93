@@ -3,7 +3,6 @@
     <h1 class="mx-3 my-4">
         <i class="bi bi-wallet2"></i>
         @if ($pet)
-
             Nº {{ $pet->id_pet }}
         @else
             Cadastro novo Pet
@@ -39,8 +38,7 @@
                 )
                 ||
                 old('id_especie') == $especie->id_especie
-                )
-                >
+                )>
                 {{ $especie->especie }}
             </option>
             @endforeach

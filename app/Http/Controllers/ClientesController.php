@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Adocoes;
 use App\Models\Clientes;
 use App\Models\Contatos;
+use App\Models\HistoricoClientes;
 use App\Models\Sexos;
 use Illuminate\Http\Request;
 
@@ -29,7 +30,8 @@ class ClientesController extends Controller
         $clientes = null;
         $contatos = Contatos::class;
         $sexos = Sexos::class;
-        return view('clientes.form')->with(compact('clientes', 'contatos', 'sexos'));
+        $historicoClientes = HistoricoClientes::class;
+        return view('clientes.form')->with(compact('clientes', 'contatos', 'sexos','historicoClientes'));
     }
 
     /**
