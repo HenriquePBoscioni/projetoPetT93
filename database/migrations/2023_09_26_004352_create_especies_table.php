@@ -15,6 +15,8 @@ return new class extends Migration
             $table->increments('id_especie');
             $table->string('especie',45);
             $table->timestamps();
+            $table->softDeletes();
+
         });
 
         App\Models\Especies::create([

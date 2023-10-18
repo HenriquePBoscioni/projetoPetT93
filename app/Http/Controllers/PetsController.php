@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Especies;
+use App\Models\GenerosPets;
 use App\Models\Pets;
+use App\Models\Portes;
+use App\Models\Racas;
+use App\Models\Sexos;
 use Illuminate\Http\Request;
 
 class PetsController extends Controller
@@ -27,8 +32,11 @@ class PetsController extends Controller
     public function create()
     {
         $pet = null;
-        // $Sexos = sexo::class;
-        return view('pets.form')->with(compact('pet'));
+        $portes = Portes::class;
+        $racas = Racas::class;
+        $generos = GenerosPets::class;
+        $especies = Especies::class;
+        return view('pets.form')->with(compact('pet','portes','racas','generos','especies'));
     }
 
     /**
