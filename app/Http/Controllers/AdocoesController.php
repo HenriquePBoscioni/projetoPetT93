@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Adocoes;
 use Illuminate\Http\Request;
 use App\Models\{
@@ -9,6 +10,7 @@ use App\Models\{
     Status,
     Clientes,
     Pet,
+    Pets,
     Portes
 
 };
@@ -19,12 +21,36 @@ class AdocoesController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $pet = $request->get('id_pet');
+        $cliente = $request->get('id_cliente');
+        $dt_inicial = $request->get('dt_inicio') ?? null;
+        $dt_final = $request->get('dt_devolucao') ?? null;
+
+        // $adocoes = Adocoes::where(function ($query) use ($pet, $cliente, $dt_inicial, $dt_final) {
+        //     if ($pet) {
+        //         $query->where('id_pet', 'like', "%$pet%");
+        //     }
+        //     if ($cliente) {
+        //         $query->where('id_cliente', 'like', "%$cliente%");
+        //     }
+        //     if ($dt_inicial) {
+        //         $query->where('id_inicio', '>=', "%$dt_inicial%");
+        //     }
+        //     if ($cliente) {
+        //         $query->where('id_devolucao', '<=', "%$dt_final%");
+        //     }
+        // })->orderBy('id_adocao')->paginate(10);
+        // return view('adocoes.index')->with(compact('adocoes'));
+
         $adocoes = Adocoes::orderBy('id_adocao')->paginate(10);
-        $adocoes = Adocoes::orderBy('id_adocao')->paginate(1);
+        // $adocoes = Adocoes::orderBy('id_adocao')->paginate(1);
         return view('adocoes.index')->with(compact('adocoes'));//
+
         //teste
+
+
     }
 
     /**
@@ -33,7 +59,11 @@ class AdocoesController extends Controller
     public function create()
     {
         $adocao = null;
-        return view('adocoes.form')->with(compact('adocao'));
+        $clientes = Clientes::class;
+        $pets = Pets::class;
+        $status = Status::class;
+        return view('adocoes.form')->with(compact('adocao','clientes','pets','status'));
+
     }
 
     /**
@@ -41,9 +71,16 @@ class AdocoesController extends Controller
      */
     public function store(Request $request)
     {
-        Adocoes::create($request->all());
 
-        return redirect()->route('adocoes.index')->with('novo','Teste adocao');
+        $adocao = new Adocoes();
+        $adocao->fill($request->all());
+
+        $adocao->id_cliente = Auth::user()->id;
+        $adocao->save();
+        return redirect()->route('adocoes.index');
+
+        // Adocoes::create($request->all());
+        // return redirect()->route('adocoes.index')->with('novo','Teste adocao');
     }
 
     /**

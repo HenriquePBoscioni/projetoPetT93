@@ -19,21 +19,8 @@
         <div class="col-md-6">
             <label for="id_cliente" class="form-label">Clientes*</label>
             <select id="id_cliente" class="form-select" required>
-                <option>Clientes...</option>
-            </select>
-        </div>
-        <div class="col-md-6">
-            <label for="id_cliente" class="form-label">Pets*</label>
-            <select id="id_cliente" class="form-select" required>
-                <option>Pets...</option>
-            </select>
-        </div>
-
-        <div class="col-md-4">
-            <label for="id_cliente" class="form-label">Status*</label>
-            <select id="id_cliente" class="form-select" required>
                 <option>Escolha...</option>
-                {{-- @foreach ($clientes::orderBy('cliente')->get() as $cliente)
+                @foreach ($clientes::orderBy('cliente')->get() as $cliente)
             <option value="{{ $cliente->id_cliente}}"
             @selected(
                 (
@@ -46,7 +33,49 @@
                 >
                 {{ $cliente->cliente }}
             </option>
-            @endforeach --}}
+            @endforeach
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label for="id_cliente" class="form-label">Pets*</label>
+            <select id="id_cliente" class="form-select" required>
+                <option>Escolha...</option>
+                @foreach ($pets::orderBy('pet')->get() as $pet)
+            <option value="{{ $pet->id_pet}}"
+            @selected(
+                (
+                    $adocao &&
+                    $adocao->id_pet == $pet->id_pet
+                )
+                ||
+                old('id_pet') == $pet->id_pet
+                )
+                >
+                {{ $pet->pet }}
+            </option>
+            @endforeach
+            </select>
+        </div>
+
+        <div class="col-md-4">
+            <label for="id_cliente" class="form-label">Status*</label>
+            <select id="id_cliente" class="form-select" required>
+                <option>Escolha...</option>
+                @foreach ($status::orderBy('status')->get() as $status)
+            <option value="{{ $status->id_status}}"
+            @selected(
+                (
+                    $adocao &&
+                    $adocao->id_status == $status->id_status
+                )
+                ||
+                old('id_status') == $status->id_status
+                )
+                >
+                {{ $status->status }}
+            </option>
+            @endforeach
             </select>
         </div>
 
@@ -63,35 +92,6 @@
             </label>
             <input class="form-control" type="date" name="dt_inicial" id="dt_inicial">
         </div>
-
-
-        {{-- <div class="col-md-3"> --}}
-        {{-- <label for="id_pet" class="form-label">Pet*</label> --}}
-        {{-- <select id="id_pet" class="form-select" required> --}}
-        {{-- <option value="">Escolha...</option> --}}
-        {{-- @foreach ($pet::orderBy('pet')->get() as $centro)
-                    <option value="{{$centro->id_pet}}"
-                        @selected(
-                            (
-                                $adocao &&
-                                $adocao->id_pet == $centro->id_pet
-                            )
-                            ||
-                            old('id_pet') == $centro->id_pet
-                        )
-                    >
-                        {{ $centro->pet}}
-                    </option>
-                @endforeach --}}
-        {{-- </select> --}}
-        {{-- </div> --}}
-
-        {{-- <div class="col-md-4">
-            <label class="form-label" for="valor">Valor*</label>
-            <input class="form-control" type="number" id="valor" name="valor"
-                value="{{ $adocao ? $adocao->valor : old('valor') }}" required>
-        </div> --}}
-
 
         <div class="col-md-12">
             <label class="form-label" for="descricao">Observaçoes*</label>
@@ -111,5 +111,6 @@
     </form>
 @endsection
 @section('scripts')
+
     @parent
 @endsection
