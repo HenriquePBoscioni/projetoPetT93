@@ -14,20 +14,20 @@
         @csrf
 
 
-        <div class="col-md-5">
+        <div class="col-md-6">
             <label class="form-label" for="pet">Pet*</label>
             <input class="form-control" type="text" id="pet" name="pet"
                 value="{{ $pet ? $pet->pet : old('pet') }}" required>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-6">
             <label class="form-label" for="idade">Idade*</label>
             <input class="form-control" type="number" id="idade" name="idade"
                 value="{{ $pet ? $pet->idade : old('idade') }}" required>
         </div>
 
         <div class="col-md-6">
-            <label for="id_especie" class="form-label">especies*</label>
+            <label for="id_especie" class="form-label">Especies*</label>
             <select id="id_especie" class="form-select" required>
                 <option>Escolha...</option>
                 @foreach ($especies::orderBy('especie')->get() as $especie)
@@ -111,89 +111,25 @@
             </div>
 
 
-        <div class="col-md-4">
+        <div class="col-md-6">
             <label  for="dt_inicial" class="form-label">Data de Nascimento*</label>
             <input class="form-control" type="date" name="dt_inicial" id="dt_inicial">
             {{-- value="{{ $pet ? $pet->Sexo : old('Sexo') }}" --}}
         </div>
 
 
-        <div class="col-md-4">
+        <div class="col-md-6">
             <label  for="dt_inicial" class="form-label">Data da adoção*</label>
             <input class="form-control" type="date" name="dt_inicial" id="dt_inicial">
             {{-- value="{{ $pet ? $pet->Sexo : old('Sexo') }}" --}}
         </div>
 
-
-
-
-
-
-        {{-- <div class="col-md-4">
-            <label class="form-label" for="dt_inicial">
-                Data da devolucao do pet*
-            </label>
-            <input class="form-control" type="date" name="dt_inicial" id="dt_inicial">
-        </div> --}}
-
-
-        {{-- <div class="col-md-3"> --}}
-        {{-- <label for="id_pet" class="form-label">Pet*</label> --}}
-        {{-- <select id="id_pet" class="form-select" required> --}}
-        {{-- <option value="">Escolha...</option> --}}
-        {{-- @foreach ($pet::orderBy('pet')->get() as $centro)
-                    <option value="{{$centro->id_pet}}"
-                        @selected(
-                            (
-                                $adocao &&
-                                $adocao->id_pet == $centro->id_pet
-                            )
-                            ||
-                            old('id_pet') == $centro->id_pet
-                        )
-                    >
-                        {{ $centro->pet}}
-                    </option>
-                @endforeach --}}
-        {{-- </select> --}}
-        {{-- </div> --}}
-
-        {{-- <div class="col-md-4">
-            <label class="form-label" for="valor">Valor*</label>
-            <input class="form-control" type="number" id="valor" name="valor"
-                value="{{ $adocao ? $adocao->valor : old('valor') }}" required>
-        </div> --}}
-
-
-        {{-- <div class="col-md-4">
-            <label for="id_porte" class="form-label">Porte*</label>
-            <select name="id_porte" id="id_porte" class="form-select"
-            value="{{ $pet ? $pet->Sexo : old('Portes') }}" required>
-                <option>Escolha...</option>
-                <option>Pequeno</option>
-                <option>Médio</option>
-                <option>Grande</option>
-            </div>
- --}}
-
-
-        <div class="col-md-5">
-            <label class="form-label" for="descricao">Observaçoes</label>
+        <div class="col-md-12">
+            <label class="form-label" for="descricao">Observaçoes*</label>
             <input class="form-control" type="text" id="descricao" name="descricao"
                 value="{{ $pet ? $pet->descricao : old('descricao') }}" required>
         </div>
 
-
-
-
-
-        {{-- <div class="col-md-12">
-            <label class="form-label" for="descricao">Historico do pet*</label>
-            <input class="form-control" type="text" id="descricao" name="descricao"
-                value="{{ $pet ? $pet->descricao : old('descricao') }}" required> --}}
-        </div>
-        <br>
-        <br>
         <div class="col-md-2 offset-md-11">
             <input class="btn btn-primary" type="submit" value="{{ $pet ? 'Atualizar' : 'Cadastrar' }}">
         </div>
