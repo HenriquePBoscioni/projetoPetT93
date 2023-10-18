@@ -52,7 +52,6 @@
                 <option>Rato-De-Estimacão(Fancy Rat)</option>
                 <option>Hamster Sirio(Golden)</option>
                 <option>Hamster Anão Russo</option>
-
             </select>
         </div>
 
@@ -186,7 +185,7 @@
         </div>
         <br>
         <br>
-        <div class="col-md-2 offset-md-11">
+        <div class="col-md-2 offset-md-9">
             <input class="btn btn-primary" type="submit" value="{{ $pet ? 'Atualizar' : 'Cadastrar' }}">
         </div>
 
