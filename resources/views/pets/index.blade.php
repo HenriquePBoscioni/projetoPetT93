@@ -22,7 +22,7 @@
     <form action="{{ route('pets.create') }}" method="get">
 
         <input class="form-control col-md-4" type="search" name="search" id="search"
-            placeholder="Digite o Nome do pet..."
+            placeholder="Digite o nome"
             value="{{ old('search',request()->get('search')) }}">
 
         {{-- data inicial --}}
@@ -52,27 +52,25 @@
         </div>
 
         <br>
-        {{-- /data inicial --}}
-        {{-- data final --}}
-        {{-- <div class="col-md-3">
-            <label class="form-label" for="dt_final">
-                Data final
-            </label>
-            <input
-            class="form-control" type="date"
-            name="dt_final" id="dt_final">
-        </div> --}}
-        {{-- /data final --}}
+{{-- Barra de pesquisa --}}
+        <div class="col-md-8">
+            <input class="btn btn-success col-md-2" type="submit" value="Pesquisar"
+            href="{{ route('pets.index') }}">
+            </div>
+{{-- Barra de pesquisa --}}
 
-
-        <input class="btn btn-success col-md-2"  href="{{ route('pets.index') }}" type="submit" value="Pesquisar">
-
-        @if(request()->get('search') !='')
+{{-- Limpar --}}
+<br>
+        <div class="col-md-8">
         <a class="btn btn-primary col-md-1"
-            href="{{ route('pets.create') }}">
-          Limpar
+          href="{{ route('pets.index') }}">
+          <i class="fa-solid fa-broom"></i>
+         Limpar
         </a>
-        @endif
+        </div>
+
+
+ {{-- Limpar --}}
 
     </form>
 </div>
