@@ -14,52 +14,12 @@
         @csrf
 
 
-<<<<<<< HEAD
-        <div class="col-md-6">
-            <label for="id_pet" class="form-label">Pets*</label>
-            <select id="id_pet" id="id_pet" class="form-control"
-            value="{{ $pet ? $pet->pet : old('Pets') }}"required>
-                <option></option>
-                <option>Cachorro...</option>
-                <option>Gato</option>
-                <option>Ave</option>
-                <option>Reptil</option>
-                <option>Roedores</option>
-            </select>
-        </div>
 
-         <div class="col-md-6">
-            <label for="id_raca" class="form-label">Raças*</label>
-            <select id="id_raca"  id="id_raca" class="form-control"
-            value="{{ $pet ? $pet->raca : old('Racas') }}" required>
-                <option></option>
-                <option>Pastor-Alemao</option>
-                <option>Rottweiler</option>
-                <option>Golden</option>
-                <option>Vira-Lata</option>
-                <option>Gato Persa</option>
-                <option>Gato Europeu</option>
-                <option>Gato Siamês</option>
-                <option>Munchkin</option>
-                <option>Papagaio</option>
-                <option>Periquito</option>
-                <option>Canario</option>
-                <option>Calopsita</option>
-                <option>Tartaruga</option>
-                <option>Camaleao</option>
-                <option>Tegu Argentino</option>
-                <option>Python-Real</option>
-                <option>Porquinho-da-Índia</option>
-                <option>Rato-De-Estimacão(Fancy Rat)</option>
-                <option>Hamster Sirio(Golden)</option>
-                <option>Hamster Anão Russo</option>
-            </select>
-=======
         <div class="col-md-5">
             <label class="form-label" for="pet">Pet*</label>
             <input class="form-control" type="text" id="pet" name="pet"
                 value="{{ $pet ? $pet->pet : old('pet') }}" required>
->>>>>>> master
+
         </div>
 
         <div class="col-md-4">
