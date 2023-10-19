@@ -13,12 +13,9 @@
         @csrf
 
 
-<<<<<<< HEAD
         <div class="col-md-6">
-=======
 
         <div class="col-md-5">
->>>>>>> Rafael
             <label class="form-label" for="pet">Pet*</label>
             <input class="form-control" type="text" id="pet" name="pet"
                 value="{{ $pet ? $pet->pet : old('pet') }}" required>
@@ -93,7 +90,7 @@
             </select>
         </div>
 
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <label for="id_genero" class="form-label">Genero*</label>
                 <select id="id_genero" class="form-select" required>
                     <option>Escolha...</option>
@@ -126,9 +123,7 @@
                 value="{{ $pet ? $pet->descricao : old('descricao') }}" required>
         </div>
 
-<<<<<<< HEAD
         <div class="col-md-2 offset-md-11">
-=======
 
 
 
@@ -141,7 +136,6 @@
         <br>
         <br>
         <div class="col-md-2 offset-md-9">
->>>>>>> Rafael
             <input class="btn btn-primary" type="submit" value="{{ $pet ? 'Atualizar' : 'Cadastrar' }}">
         </div>
 
