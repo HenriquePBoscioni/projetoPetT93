@@ -14,10 +14,16 @@
         @csrf
 
 
+<<<<<<< HEAD
         <div class="col-md-6">
+=======
+
+        <div class="col-md-5">
+>>>>>>> Rafael
             <label class="form-label" for="pet">Pet*</label>
             <input class="form-control" type="text" id="pet" name="pet"
                 value="{{ $pet ? $pet->pet : old('pet') }}" required>
+
         </div>
 
         <div class="col-md-6">
@@ -130,7 +136,22 @@
                 value="{{ $pet ? $pet->descricao : old('descricao') }}" required>
         </div>
 
+<<<<<<< HEAD
         <div class="col-md-2 offset-md-11">
+=======
+
+
+
+
+        {{-- <div class="col-md-12">
+            <label class="form-label" for="descricao">Historico do pet*</label>
+            <input class="form-control" type="text" id="descricao" name="descricao"
+                value="{{ $pet ? $pet->descricao : old('descricao') }}" required> --}}
+        </div>
+        <br>
+        <br>
+        <div class="col-md-2 offset-md-9">
+>>>>>>> Rafael
             <input class="btn btn-primary" type="submit" value="{{ $pet ? 'Atualizar' : 'Cadastrar' }}">
         </div>
 

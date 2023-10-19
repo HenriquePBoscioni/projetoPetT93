@@ -19,19 +19,19 @@
 {{-- /paginação --}}
 {{-- pesquisa --}}
 <div class="row">
+    <label class="form-label" for="id_pet">Digite o nome do animal</label>
     <form action="{{ route('pets.create') }}" method="get">
-
         <input class="form-control col-md-4" type="search" name="search" id="search"
-            placeholder="Digite o Nome do pet..."
+         placeholder="Digite aqui"
             value="{{ old('search',request()->get('search')) }}">
 
         {{-- data inicial --}}
         <div class="col-md-3">
-            <label class="form-label" for="dt_inicial">
-                Data Nasc.
+            <label class="form-label" for="idade">
+                Digite a idade
             </label>
             <input class="form-control"
-            type="date" name="dt_inicial" id="dt_inicial">
+            type="number" name="idade" id="idade">
         </div>
         <div class="col-md-3">
             <label for="id_pet" class="form-label">Especie</label>
@@ -52,27 +52,24 @@
         </div>
 
         <br>
-        {{-- /data inicial --}}
-        {{-- data final --}}
-        {{-- <div class="col-md-3">
-            <label class="form-label" for="dt_final">
-                Data final
-            </label>
-            <input
-            class="form-control" type="date"
-            name="dt_final" id="dt_final">
-        </div> --}}
-        {{-- /data final --}}
+{{-- Barra de pesquisa --}}
+        <div class="col-md-8">
+            <input class="btn btn-success col-md-2" type="submit" value="Pesquisar"
+            href="{{ route('pets.index') }}">
+            </div>
+{{-- Barra de pesquisa --}}
 
-
-        <input class="btn btn-success col-md-2"  href="{{ route('pets.index') }}" type="submit" value="Pesquisar">
-
-        @if(request()->get('search') !='')
+{{-- Limpar --}}
+<br>
+        <div class="col-md-8">
         <a class="btn btn-primary col-md-1"
-            href="{{ route('pets.create') }}">
-          Limpar
+          href="{{ route('pets.index') }}">
+          <i class="fa-solid fa-broom"></i>
+         Limpar
         </a>
-        @endif
+        </div>
+
+ {{-- Limpar --}}
 
     </form>
 </div>
@@ -81,8 +78,7 @@
     <table class="table table-striped  table-hover ">
         <thead>
             <tr>
-                <th>#</th>
-                {{-- <th>id</th> --}}
+                <th></th>
                 <th>Pet</th>
                 <th>Idade</th>
                 <th>Raça</th>
