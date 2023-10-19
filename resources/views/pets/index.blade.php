@@ -69,7 +69,6 @@
         </a>
         </div>
 
-
  {{-- Limpar --}}
 
     </form>
@@ -80,7 +79,6 @@
         <thead>
             <tr>
                 <th>#</th>
-                {{-- <th>id</th> --}}
                 <th>Pet</th>
                 <th>Idade</th>
                 <th>Raça</th>
