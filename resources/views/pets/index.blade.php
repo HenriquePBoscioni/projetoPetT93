@@ -19,19 +19,19 @@
 {{-- /paginação --}}
 {{-- pesquisa --}}
 <div class="row">
+    <label class="form-label" for="id_pet">Digite o nome do animal</label>
     <form action="{{ route('pets.create') }}" method="get">
-
         <input class="form-control col-md-4" type="search" name="search" id="search"
-            placeholder="Digite o nome"
+         placeholder="Digite aqui"
             value="{{ old('search',request()->get('search')) }}">
 
         {{-- data inicial --}}
         <div class="col-md-3">
-            <label class="form-label" for="dt_inicial">
-                Data Nasc.
+            <label class="form-label" for="idade">
+                Digite a idade
             </label>
             <input class="form-control"
-            type="date" name="dt_inicial" id="dt_inicial">
+            type="number" name="idade" id="idade">
         </div>
         <div class="col-md-3">
             <label for="id_pet" class="form-label">Especie</label>
@@ -78,7 +78,7 @@
     <table class="table table-striped  table-hover ">
         <thead>
             <tr>
-                <th>#</th>
+                <th></th>
                 <th>Pet</th>
                 <th>Idade</th>
                 <th>Raça</th>
