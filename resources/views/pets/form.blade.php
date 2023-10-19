@@ -3,7 +3,6 @@
     <h1 class="mx-3 my-4">
         <i class="bi bi-wallet2"></i>
         @if ($pet)
-
             Nº {{ $pet->id_pet }}
         @else
             Cadastro novo Pet
@@ -45,8 +44,7 @@
                 )
                 ||
                 old('id_especie') == $especie->id_especie
-                )
-                >
+                )>
                 {{ $especie->especie }}
             </option>
             @endforeach
@@ -116,14 +114,6 @@
                 </select>
             </div>
 
-
-        <div class="col-md-6">
-            <label  for="dt_inicial" class="form-label">Data de Nascimento*</label>
-            <input class="form-control" type="date" name="dt_inicial" id="dt_inicial">
-            {{-- value="{{ $pet ? $pet->Sexo : old('Sexo') }}" --}}
-        </div>
-
-
         <div class="col-md-6">
             <label  for="dt_inicial" class="form-label">Data da adoção*</label>
             <input class="form-control" type="date" name="dt_inicial" id="dt_inicial">
@@ -131,7 +121,7 @@
         </div>
 
         <div class="col-md-12">
-            <label class="form-label" for="descricao">Observaçoes*</label>
+            <label class="form-label" for="descricao">Descricao*</label>
             <input class="form-control" type="text" id="descricao" name="descricao"
                 value="{{ $pet ? $pet->descricao : old('descricao') }}" required>
         </div>

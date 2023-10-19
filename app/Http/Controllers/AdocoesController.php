@@ -75,8 +75,8 @@ class AdocoesController extends Controller
         $adocao = new Adocoes();
         $adocao->fill($request->all());
 
-        $adocao->id_cliente = Auth::user()->id;
-        $adocao->save();
+        // $adocao->id_cliente = Auth::user()->id;
+        // $adocao->save();
         return redirect()->route('adocoes.index');
 
         // Adocoes::create($request->all());

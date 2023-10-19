@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Especies;
 use App\Models\GenerosPets;
+use App\Models\HistoricoPets;
 use App\Models\Pets;
 use App\Models\Portes;
 use App\Models\Racas;
@@ -36,7 +37,8 @@ class PetsController extends Controller
         $racas = Racas::class;
         $generos = GenerosPets::class;
         $especies = Especies::class;
-        return view('pets.form')->with(compact('pet','portes','racas','generos','especies'));
+        $historicoPets = HistoricoPets::class;
+        return view('pets.form')->with(compact('pet','portes','racas','generos','especies','historicoPets'));
     }
 
     /**
