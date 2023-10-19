@@ -8,6 +8,7 @@ use App\Models\Contatos;
 use App\Models\HistoricoClientes;
 use App\Models\Sexos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ClientesController extends Controller
 {
@@ -17,6 +18,13 @@ class ClientesController extends Controller
     public function index()
     {
         $clientes = Clientes::orderBy('id_cliente')->paginate();
+
+        $contatos = DB::table('clientes')
+            ->join('contatos', 'contatos.id_cliente', '=', 'clientes.id_cliente')
+            ->select('clientes.cliente', 'contatos.email')
+            ->get();
+
+
      //teste
         $clientes = Clientes::all();
         return view('clientes.index')->with(compact('clientes'));
@@ -27,11 +35,11 @@ class ClientesController extends Controller
      */
     public function create()
     {
-        $clientes = null;
+        $cliente = null;
         $contatos = Contatos::class;
         $sexos = Sexos::class;
         $historicoClientes = HistoricoClientes::class;
-        return view('clientes.form')->with(compact('clientes', 'contatos', 'sexos','historicoClientes'));
+        return view('clientes.form')->with(compact('cliente', 'contatos', 'sexos','historicoClientes'));
     }
 
     /**
